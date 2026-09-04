@@ -26,7 +26,7 @@ export function Header() {
       return;
     }
     const io = new IntersectionObserver(
-      ([entry]) => setHeroInView(entry.isIntersecting),
+      ([entry]) => entry && setHeroInView(entry.isIntersecting),
       { rootMargin: "-72px 0px 0px 0px", threshold: 0 },
     );
     io.observe(hero);
