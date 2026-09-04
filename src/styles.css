@@ -12,6 +12,30 @@
   font-display: swap;
 }
 
+@font-face {
+  font-family: "Fraunces";
+  src: url("/fonts/Fraunces.woff2") format("woff2");
+  font-weight: 400 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Fredoka";
+  src: url("/fonts/Fredoka.woff2") format("woff2");
+  font-weight: 400 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Work Sans";
+  src: url("/fonts/WorkSans.woff2") format("woff2");
+  font-weight: 400 700;
+  font-style: normal;
+  font-display: swap;
+}
+
 @custom-variant dark (&:is(.dark *));
 
 /*
