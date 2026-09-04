@@ -12,26 +12,6 @@ import {
 } from "@/data/site";
 
 export const Route = createFileRoute("/")({
-  head: () => ({
-    meta: [
-      { title: "Bloom & Balance — Massage & Wellness with Angie in Freiburg" },
-      {
-        name: "description",
-        content:
-          "Warm, unhurried massage, bodywork and wellness coaching with Angie in Freiburg. See services, prices and book your session online.",
-      },
-      {
-        property: "og:title",
-        content: "Bloom & Balance — Massage & Wellness with Angie in Freiburg",
-      },
-      {
-        property: "og:description",
-        content: "Warm, unhurried massage and bodywork with Angie in Freiburg. Book online.",
-      },
-      { property: "og:type", content: "website" },
-      { name: "twitter:card", content: "summary_large_image" },
-    ],
-  }),
   component: Index,
 });
 
