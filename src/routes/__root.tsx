@@ -14,6 +14,53 @@ import { Header } from "@/components/Header";
 import { PromoBanner } from "@/components/PromoBanner";
 import appCss from "../styles.css?url";
 
+const SITE_URL = "https://bloom-balance-wellness.com";
+
+// LocalBusiness structured data — helps Google surface the business info panel
+// (address, hours, phone, booking) directly in search results.
+const businessJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "HealthAndBeautyBusiness",
+  "@id": `${SITE_URL}/#business`,
+  name: "Bloom & Balance",
+  description:
+    "Warm, unhurried massage and bodywork with Angie in Freiburg. Sessions by appointment on Thursdays and Saturdays. Offered in English, German, and Russian.",
+  url: `${SITE_URL}/`,
+  image: `${SITE_URL}/og.png`,
+  logo: `${SITE_URL}/logo.png`,
+  email: "hi@bloom-balance.info",
+  telephone: "+4917613677449",
+  priceRange: "€€",
+  address: {
+    "@type": "PostalAddress",
+    streetAddress: "Hamsa Studio, Hildastraße 17",
+    addressLocality: "Freiburg im Breisgau",
+    postalCode: "79102",
+    addressCountry: "DE",
+  },
+  geo: {
+    "@type": "GeoCoordinates",
+    latitude: 47.9894717,
+    longitude: 7.8519944,
+  },
+  areaServed: { "@type": "City", name: "Freiburg im Breisgau" },
+  availableLanguage: ["en", "de", "ru"],
+  founder: { "@type": "Person", name: "Angelina Sukhareva" },
+  sameAs: ["https://instagram.com/bloom.balance.de"],
+  potentialAction: {
+    "@type": "ReserveAction",
+    target: {
+      "@type": "EntryPoint",
+      urlTemplate: "https://app.acuityscheduling.com/schedule.php?owner=40285797",
+      actionPlatform: [
+        "http://schema.org/DesktopWebPlatform",
+        "http://schema.org/MobileWebPlatform",
+      ],
+    },
+    result: { "@type": "Reservation", name: "Massage session" },
+  },
+};
+
 function NotFoundComponent() {
   return (
     <div className="flex min-h-screen items-center justify-center bg-background px-4">
@@ -92,8 +139,8 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         property: "og:description",
         content: "Warm, unhurried massage and bodywork with Angie in Freiburg.",
       },
-      { property: "og:url", content: "https://bloom-balance-wellness.com/" },
-      { property: "og:image", content: "https://bloom-balance-wellness.com/og.png" },
+      { property: "og:url", content: `${SITE_URL}/` },
+      { property: "og:image", content: `${SITE_URL}/og.png` },
       { property: "og:image:width", content: "1200" },
       { property: "og:image:height", content: "630" },
       { property: "og:image:alt", content: "Bloom & Balance — Freiburg" },
@@ -103,7 +150,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         name: "twitter:description",
         content: "Warm, unhurried massage and bodywork with Angie in Freiburg.",
       },
-      { name: "twitter:image", content: "https://bloom-balance-wellness.com/og.png" },
+      { name: "twitter:image", content: `${SITE_URL}/og.png` },
     ],
     links: [
       { rel: "stylesheet", href: appCss },
@@ -144,6 +191,10 @@ function RootShell({ children }: { children: ReactNode }) {
     <html lang="en">
       <head>
         <HeadContent />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(businessJsonLd) }}
+        />
       </head>
       <body>
         {children}

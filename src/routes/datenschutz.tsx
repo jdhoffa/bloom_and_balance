@@ -12,6 +12,11 @@ export const Route = createFileRoute("/datenschutz")({
         content: "Datenschutzerklärung for Bloom & Balance, Freiburg im Breisgau.",
       },
       { name: "robots", content: "index,follow" },
+      { property: "og:title", content: "Datenschutz — Bloom & Balance" },
+      { property: "og:url", content: "https://bloom-balance-wellness.com/datenschutz" },
+    ],
+    links: [
+      { rel: "canonical", href: "https://bloom-balance-wellness.com/datenschutz" },
     ],
   }),
   component: Datenschutz,

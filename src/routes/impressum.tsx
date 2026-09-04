@@ -9,6 +9,11 @@ export const Route = createFileRoute("/impressum")({
       { title: "Impressum — Bloom & Balance" },
       { name: "description", content: "Impressum for Bloom & Balance, Freiburg im Breisgau." },
       { name: "robots", content: "index,follow" },
+      { property: "og:title", content: "Impressum — Bloom & Balance" },
+      { property: "og:url", content: "https://bloom-balance-wellness.com/impressum" },
+    ],
+    links: [
+      { rel: "canonical", href: "https://bloom-balance-wellness.com/impressum" },
     ],
   }),
   component: Impressum,

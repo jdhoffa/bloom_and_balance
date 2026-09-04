@@ -13,6 +13,11 @@ export const Route = createFileRoute("/agb")({
           "Allgemeine Geschäftsbedingungen (AGB) for Bloom & Balance, Freiburg im Breisgau.",
       },
       { name: "robots", content: "index,follow" },
+      { property: "og:title", content: "AGB — Bloom & Balance" },
+      { property: "og:url", content: "https://bloom-balance-wellness.com/agb" },
+    ],
+    links: [
+      { rel: "canonical", href: "https://bloom-balance-wellness.com/agb" },
     ],
   }),
   component: Agb,

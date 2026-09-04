@@ -12,6 +12,9 @@ import {
 } from "@/data/site";
 
 export const Route = createFileRoute("/")({
+  head: () => ({
+    links: [{ rel: "canonical", href: "https://bloom-balance-wellness.com/" }],
+  }),
   component: Index,
 });
 
