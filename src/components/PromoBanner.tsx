@@ -1,5 +1,7 @@
-import { X } from "lucide-react";
+import { ArrowUpRight, X } from "lucide-react";
 import { useEffect, useState } from "react";
+
+import { BOOKING_URL } from "@/data/site";
 
 const PROMO_DISMISS_KEY = "promo-intro-dismissed";
 
@@ -26,11 +28,20 @@ export function PromoBanner() {
 
   return (
     <div role="region" aria-label="Promotion" className="relative bg-lavender text-taupe">
-      <div className="mx-auto flex max-w-[1160px] items-center justify-center px-5 py-2.5 pr-12">
+      <div className="mx-auto flex max-w-[1160px] flex-wrap items-center justify-center gap-x-4 gap-y-1.5 px-5 py-2.5 pr-12">
         <p className="text-center text-sm font-medium">
           Book your first 90 minutes introductory session with 50% off — use code{" "}
-          <span className="font-semibold tracking-wide">FIRSTBLOOM</span>.
+          <span className="font-semibold tracking-wide">FIRSTBLOOM</span>
         </p>
+        <a
+          href={BOOKING_URL}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-flex items-center gap-1 rounded-full bg-taupe/10 px-2.5 py-0.5 text-xs font-semibold uppercase tracking-wider text-taupe transition hover:bg-taupe hover:text-lavender focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring"
+        >
+          Book now
+          <ArrowUpRight className="size-3.5" aria-hidden />
+        </a>
       </div>
       <button
         type="button"
