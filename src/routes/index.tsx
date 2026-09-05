@@ -1,15 +1,18 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { ChevronDown, Instagram, Mail } from "lucide-react";
+import { useState } from "react";
 
 import { BookButton } from "@/components/BookButton";
 import { WhatsAppIcon } from "@/components/WhatsAppIcon";
 import {
   aftercareDisclaimer,
+  babySession,
   contact,
   faqs,
   services,
   steps,
 } from "@/data/site";
+import { cn } from "@/lib/utils";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -151,25 +154,75 @@ function Philosophy() {
 }
 
 function Expect() {
+  const [mode, setMode] = useState<"adult" | "baby">("adult");
+
   return (
     <section id="expect" className="section-pad bg-cream">
       <div className="mx-auto max-w-[1000px] px-5">
-        <div className="max-w-xl">
-          <h2 className="text-3xl md:text-4xl">What to expect from your session</h2>
+        <div className="flex flex-col gap-6 sm:flex-row sm:items-end sm:justify-between">
+          <h2 className="max-w-xl text-3xl md:text-4xl">What to expect from your session</h2>
+          <div
+            role="tablist"
+            aria-label="Session type"
+            className="inline-flex self-start rounded-full border border-border bg-background/70 p-1 shadow-sm"
+          >
+            {(
+              [
+                { key: "adult", label: "Adults" },
+                { key: "baby", label: "Babies" },
+              ] as const
+            ).map((opt) => (
+              <button
+                key={opt.key}
+                type="button"
+                role="tab"
+                aria-selected={mode === opt.key}
+                onClick={() => setMode(opt.key)}
+                className={cn(
+                  "rounded-full px-5 py-2 text-sm font-medium transition",
+                  mode === opt.key
+                    ? "bg-celadon/30 text-foreground shadow-inner"
+                    : "text-foreground/60 hover:text-foreground",
+                )}
+              >
+                {opt.label}
+              </button>
+            ))}
+          </div>
         </div>
-        <ol className="mt-10 grid gap-5 sm:grid-cols-2">
-          {steps.map((s, i) => (
-            <li key={s.title} className="card-soft p-7">
-              <span className="accent-text text-lg">{String(i + 1).padStart(2, "0")}</span>
-              <h3 className="mt-1 text-xl">{s.title}</h3>
-              <p className="mt-2 text-foreground/80">{s.body}</p>
-            </li>
-          ))}
-        </ol>
-        <p className="mt-6 text-base text-foreground/85">
-          <span className="font-medium text-foreground">Disclaimer · </span>
-          {aftercareDisclaimer}
-        </p>
+
+        {mode === "adult" ? (
+          <>
+            <ol className="mt-10 grid gap-5 sm:grid-cols-2">
+              {steps.map((s, i) => (
+                <li key={s.title} className="card-soft p-7">
+                  <span className="accent-text text-lg">{String(i + 1).padStart(2, "0")}</span>
+                  <h3 className="mt-1 text-xl">{s.title}</h3>
+                  <p className="mt-2 text-foreground/80">{s.body}</p>
+                </li>
+              ))}
+            </ol>
+            <p className="mt-6 text-base text-foreground/85">
+              <span className="font-medium text-foreground">Disclaimer · </span>
+              {aftercareDisclaimer}
+            </p>
+          </>
+        ) : (
+          <div className="mt-10">
+            <div className="card-soft p-7 sm:p-9">
+              <h3 className="text-xl">{babySession.tagline}</h3>
+              <div className="mt-5 space-y-4 text-foreground/80">
+                {babySession.paragraphs.map((para, i) => (
+                  <p key={i}>{para}</p>
+                ))}
+              </div>
+            </div>
+            <p className="mt-6 text-base text-foreground/85">
+              <span className="font-medium text-foreground">Disclaimer · </span>
+              {babySession.disclaimer}
+            </p>
+          </div>
+        )}
       </div>
     </section>
   );

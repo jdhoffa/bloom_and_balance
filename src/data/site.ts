@@ -45,6 +45,11 @@ export const services = [
     duration: "30 min",
     price: "50 €",
   },
+  {
+    name: "Baby Massage",
+    duration: "30 min",
+    price: "60 €",
+  },
 ];
 
 export const steps = [
@@ -69,6 +74,17 @@ export const steps = [
 export const aftercareDisclaimer =
   "Please note that I am not a medical practitioner, nor a cosmetologist. My services are offered within the scope of wellness and are not intended to provide skin analysis, medical advice, diagnosis, or treatment for pre-existing conditions and pain-related symptoms.";
 
+export const babySession = {
+  tagline: "A gentle bodywork session to promote calm, comfort and connection.",
+  paragraphs: [
+    "With my background in paediatric osteopathy, I have developed a deep understanding of the gentle and sensitive nature of working with babies. I bring this knowledge and experience into my baby massage sessions.",
+    "I work without oils, instead using soft tissue techniques and very gentle mobilisations across the whole body, always following your baby's cues and allowing plenty of time to pause, settle, feed or cuddle whenever needed.",
+    "Babies can be welcomed from the early weeks after birth, provided they are well and have no underlying health concerns.",
+  ],
+  disclaimer:
+    "This is a wellness and relaxation treatment and does not replace medical or osteopathic care. If your baby has any health concerns, please consult an appropriate healthcare professional before booking.",
+};
+
 export const faqs = [
   {
     q: "Payment",
@@ -76,7 +92,7 @@ export const faqs = [
       "Treatment costs can be prepaid by card when booking online.",
       "Alternatively, payment can be made by cash or PayPal after your session.",
       "Card payments are not available on-site.",
-      "Please note that all sessions are offered for aesthetic, wellness, and relaxation purposes and are not eligible for reimbursement by healthcare insurance providers.",
+      "Please note that all sessions are offered for wellness, relaxation, and aesthetic purposes and are not eligible for reimbursement by healthcare insurance providers.",
     ],
   },
   {
