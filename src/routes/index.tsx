@@ -29,7 +29,7 @@ function Hero() {
     >
       <div className="mx-auto flex max-w-[1160px] flex-col items-center gap-10 text-center">
         <div>
-          <h1 className="font-display text-[clamp(3.5rem,11vw,7rem)] leading-[0.95] tracking-[0.02em] text-celadon">
+          <h1 className="font-display text-[clamp(4.5rem,13vw,7rem)] leading-[0.95] tracking-[0.02em] text-celadon">
             <span className="block">Bloom &amp;</span>
             <span className="block">Balance</span>
           </h1>
@@ -37,11 +37,13 @@ function Hero() {
             Freiburg
           </p>
         </div>
-        <div className="flex flex-wrap justify-center gap-4">
-          <BookButton />
+        <div className="flex flex-col items-stretch gap-3 sm:flex-row sm:flex-wrap sm:items-center sm:justify-center sm:gap-4">
+          <BookButton size="sm" className="sm:px-6 sm:py-3 sm:text-base">
+            Book Your Session
+          </BookButton>
           <a
             href="#services"
-            className="inline-flex items-center justify-center rounded-xl border-2 border-celadon bg-background/60 px-6 py-3 text-base font-medium text-foreground backdrop-blur transition hover:bg-celadon/20"
+            className="inline-flex items-center justify-center rounded-xl border-2 border-celadon bg-background/60 px-4 py-2 text-sm font-medium text-foreground backdrop-blur transition hover:bg-celadon/20 sm:px-6 sm:py-3 sm:text-base"
           >
             View services
           </a>
@@ -69,7 +71,7 @@ function MeetAngie() {
   return (
     <section id="meet-angie" className="section-pad bg-cream">
       <div className="mx-auto grid max-w-[1160px] gap-8 px-5 md:grid-cols-[1fr_1.25fr] md:items-center md:gap-12">
-        <div className="relative mx-auto w-full max-w-[220px] md:max-w-sm">
+        <div className="relative mx-auto w-full max-w-[240px] md:max-w-sm">
           <div
             aria-hidden
             className="absolute -inset-3 rotate-3 rounded-[2rem] bg-peach/25"
@@ -89,38 +91,17 @@ function MeetAngie() {
         </div>
 
         <div>
-          <div className="flex items-center justify-between gap-4 md:block">
-            <h2 className="text-3xl md:text-4xl">Meet Angie</h2>
-            <button
-              type="button"
-              onClick={() => setAboutOpen((v) => !v)}
-              aria-expanded={aboutOpen}
-              aria-controls="about-angie"
-              className="inline-flex items-center gap-1.5 rounded-full border border-border bg-background/70 px-3 py-1.5 text-xs font-medium uppercase tracking-[0.15em] text-foreground/70 transition hover:bg-background md:hidden"
-            >
-              About
-              <ChevronDown
-                aria-hidden
-                className={cn(
-                  "size-4 transition-transform",
-                  aboutOpen && "rotate-180",
-                )}
-              />
-            </button>
-          </div>
+          <h2 className="text-3xl md:text-4xl">Meet Angie</h2>
+          <p className="mt-5 text-foreground/80">
+            Born in Moscow, I moved to England at a young age and went on to study at the British
+            College of Osteopathic Medicine in London where in 2019 I was awarded a Master of
+            Osteopathy degree with commendation. The following year I also completed a
+            specialisation course in paediatrics at the Osteopathic Centre for Children in London.
+          </p>
           <div
-            id="about-angie"
-            className={cn(
-              "overflow-hidden md:!block",
-              aboutOpen ? "mt-5 block" : "hidden",
-            )}
+            id="about-angie-more"
+            className={cn("md:!block", aboutOpen ? "block" : "hidden")}
           >
-            <p className="text-foreground/80 md:mt-5">
-              Born in Moscow, I moved to England at a young age and went on to study at the British
-              College of Osteopathic Medicine in London where in 2019 I was awarded a Master of
-              Osteopathy degree with commendation. The following year I also completed a
-              specialisation course in paediatrics at the Osteopathic Centre for Children in London.
-            </p>
             <p className="mt-4 text-foreground/80">
               In 2021, I moved to Berlin and continued working as a manual therapist, initially in a
               family practice and later in a private orthopaedic clinic. During this period, I
@@ -133,6 +114,19 @@ function MeetAngie() {
               beauty. That&apos;s where the idea for Bloom &amp; Balance began to form.
             </p>
           </div>
+          <button
+            type="button"
+            onClick={() => setAboutOpen((v) => !v)}
+            aria-expanded={aboutOpen}
+            aria-controls="about-angie-more"
+            className="mt-3 inline-flex items-center gap-1 text-sm font-medium text-celadon underline-offset-4 hover:underline md:hidden"
+          >
+            {aboutOpen ? "Read less" : "Read more"}
+            <ChevronDown
+              aria-hidden
+              className={cn("size-4 transition-transform", aboutOpen && "rotate-180")}
+            />
+          </button>
         </div>
       </div>
     </section>
@@ -320,14 +314,48 @@ function Services() {
           </p>
         </div>
 
-        <ul className="mt-10 divide-y divide-border border-y border-border">
+        {/* Mobile: whole price/duration row is the tap target. Desktop unchanged. */}
+        <ul className="mt-10 flex flex-col gap-4 sm:hidden">
           {services.map((s) => (
             <li
               key={s.name}
-              className="flex flex-col gap-2 py-4 sm:flex-row sm:items-center sm:justify-between sm:gap-6"
+              className="overflow-hidden rounded-2xl border border-border bg-background shadow-sm"
+            >
+              <h3 className="border-b border-border/60 px-5 pb-3 pt-4 text-base font-medium leading-snug">
+                {s.name}
+              </h3>
+              <ul className="divide-y divide-border/60">
+                {s.options.map((opt) => (
+                  <li key={opt.href}>
+                    <a
+                      href={opt.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label={`Book ${s.name}, ${opt.duration}, ${opt.price} — opens booking in a new tab`}
+                      className="flex items-center justify-between gap-3 px-5 py-3.5 text-[15px] transition active:bg-peach/15"
+                    >
+                      <span className="flex items-baseline gap-2">
+                        <span className="font-semibold text-foreground">{opt.price}</span>
+                        <span className="text-foreground/40">·</span>
+                        <span className="text-foreground/75">{opt.duration}</span>
+                      </span>
+                      <ArrowUpRight aria-hidden className="size-4 text-peach" />
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </li>
+          ))}
+        </ul>
+
+        <ul className="mt-10 hidden divide-y divide-border border-y border-border sm:block">
+          {services.map((s) => (
+            <li
+              key={s.name}
+              className="flex flex-col gap-3 py-4 sm:flex-row sm:items-center sm:justify-between sm:gap-6"
             >
               <p className="font-medium">{s.name}</p>
-              <div className="flex flex-col sm:flex-row sm:flex-wrap sm:gap-2 sm:shrink-0 sm:justify-end">
+              <div className="flex flex-wrap gap-2 sm:shrink-0 sm:justify-end">
                 {s.options.map((opt) => (
                   <a
                     key={opt.href}
@@ -335,7 +363,7 @@ function Services() {
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label={`Book ${s.name}, ${opt.duration}, ${opt.price}`}
-                    className="group inline-flex items-center gap-1.5 py-1.5 text-sm transition sm:rounded-lg sm:px-3 sm:hover:bg-peach/15 sm:focus-visible:bg-peach/15 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring"
+                    className="group inline-flex items-center gap-1.5 rounded-lg px-3 py-1.5 text-sm transition hover:bg-peach/15 focus-visible:bg-peach/15 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring"
                   >
                     <span className="text-foreground/85">{opt.duration}</span>
                     <span className="text-foreground/40">·</span>
