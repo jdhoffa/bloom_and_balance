@@ -25,7 +25,7 @@ function Hero() {
   return (
     <section
       id="top"
-      className="relative flex min-h-[calc(100vh-72px)] min-h-[calc(100svh-72px)] items-center justify-center px-5 py-16"
+      className="relative flex min-h-[calc(100vh-128px)] min-h-[calc(100svh-128px)] items-center justify-center px-5 py-16"
     >
       <div className="mx-auto flex max-w-[1160px] flex-col items-center gap-10 text-center">
         <div>
