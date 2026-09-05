@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { ChevronDown, Instagram, Mail } from "lucide-react";
+import { ArrowUpRight, ChevronDown, Instagram, Mail } from "lucide-react";
 import { useState } from "react";
 
 import { BookButton } from "@/components/BookButton";
@@ -244,62 +244,53 @@ function Services() {
           </p>
         </div>
 
-        <div className="mt-8 rounded-2xl border border-peach/50 bg-background p-6 sm:p-7">
-          <span className="inline-flex items-center gap-2 rounded-full bg-peach/25 px-3 py-1 text-xs font-semibold uppercase tracking-wider text-peach">
+        <div className="mt-6 rounded-xl border border-peach/50 bg-background p-4 sm:p-5">
+          <span className="inline-flex items-center gap-2 rounded-full bg-peach/25 px-2.5 py-0.5 text-[0.65rem] font-semibold uppercase tracking-wider text-peach">
             Current offer
           </span>
-          <div className="mt-4 flex flex-col gap-1 sm:flex-row sm:items-baseline sm:justify-between sm:gap-6">
-            <span className="font-medium">Intro session with a 50% discount</span>
-            <span className="whitespace-nowrap font-serif text-lg">
+          <div className="mt-2.5 flex flex-col gap-1 sm:flex-row sm:items-baseline sm:justify-between sm:gap-6">
+            <span className="text-sm font-medium">Intro session with a 50% discount</span>
+            <span className="whitespace-nowrap font-serif text-base">
               75 € <span className="text-muted-foreground">· 90 min</span>
             </span>
           </div>
-          <p className="mt-4 text-sm text-foreground/75">
+          <p className="mt-2.5 text-xs text-foreground/75">
             Use code{" "}
             <span className="font-semibold tracking-wide text-foreground">FIRSTBLOOM</span>{" "}
             at checkout.
           </p>
         </div>
 
-        <div className="mt-10 overflow-x-auto">
-          <table className="w-full border-collapse text-left">
-            <thead>
-              <tr className="border-y border-border">
-                <th
-                  scope="col"
-                  className="py-4 pr-4 text-sm font-semibold text-foreground"
-                >
-                  Service
-                </th>
-                <th
-                  scope="col"
-                  className="whitespace-nowrap px-4 py-4 text-right text-sm font-semibold text-foreground"
-                >
-                  Duration
-                </th>
-                <th
-                  scope="col"
-                  className="whitespace-nowrap py-4 pl-4 text-right text-sm font-semibold text-foreground"
-                >
-                  Price
-                </th>
-              </tr>
-            </thead>
-            <tbody className="divide-y divide-border">
-              {services.map((s) => (
-                <tr key={`${s.name}-${s.duration}`}>
-                  <td className="py-4 pr-4 align-top font-medium">{s.name}</td>
-                  <td className="whitespace-nowrap px-4 py-4 text-right align-top text-foreground/85">
-                    {s.duration}
-                  </td>
-                  <td className="whitespace-nowrap py-4 pl-4 text-right align-top font-semibold">
-                    {s.price}
-                  </td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        </div>
+        <ul className="mt-10 divide-y divide-border border-y border-border">
+          {services.map((s) => (
+            <li
+              key={s.name}
+              className="flex flex-col gap-3 py-4 sm:flex-row sm:items-center sm:justify-between sm:gap-6"
+            >
+              <p className="font-medium">{s.name}</p>
+              <div className="flex flex-wrap gap-2 sm:shrink-0 sm:justify-end">
+                {s.options.map((opt) => (
+                  <a
+                    key={opt.href}
+                    href={opt.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={`Book ${s.name}, ${opt.duration}, ${opt.price}`}
+                    className="group inline-flex items-center gap-1.5 rounded-lg px-3 py-1.5 text-sm transition hover:bg-peach/15 focus-visible:bg-peach/15 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring"
+                  >
+                    <span className="text-foreground/85">{opt.duration}</span>
+                    <span className="text-foreground/40">·</span>
+                    <span className="font-semibold">{opt.price}</span>
+                    <ArrowUpRight
+                      aria-hidden
+                      className="size-3.5 text-peach/60 transition group-hover:text-peach"
+                    />
+                  </a>
+                ))}
+              </div>
+            </li>
+          ))}
+        </ul>
       </div>
     </section>
   );

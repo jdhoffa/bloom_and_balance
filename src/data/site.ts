@@ -24,31 +24,32 @@ export const navLinks = [
   { label: "Contact", href: "/#booking" },
 ];
 
+const ACUITY = "https://app.acuityscheduling.com/schedule/a8cadd27/appointment";
+
 export const services = [
   {
     name: "Initial consultation & bespoke bodywork session",
-    duration: "90 min",
-    price: "150 €",
+    options: [{ duration: "90 min", price: "150 €", href: `${ACUITY}/97783045/calendar/14510928` }],
   },
   {
     name: "Follow-up bodywork session",
-    duration: "75, 60, 45 min",
-    price: "125, 100, 75 €",
+    options: [
+      { duration: "45 min", price: "75 €", href: `${ACUITY}/97795172/calendar/14510928` },
+      { duration: "60 min", price: "100 €", href: `${ACUITY}/97795093/calendar/14510928` },
+      { duration: "75 min", price: "125 €", href: `${ACUITY}/97795017/calendar/14510928` },
+    ],
   },
   {
-    name: "Buccal Massage Focus Session",
-    duration: "30 min",
-    price: "50 €",
+    name: "Buccal massage focus session",
+    options: [{ duration: "30 min", price: "50 €", href: `${ACUITY}/97795459/calendar/14510928` }],
   },
   {
-    name: "Head, Neck and Shoulder Focus session",
-    duration: "30 min",
-    price: "50 €",
+    name: "Head, neck and shoulder focus session",
+    options: [{ duration: "30 min", price: "50 €", href: `${ACUITY}/97795887/calendar/14510928` }],
   },
   {
     name: "Baby Massage",
-    duration: "30 min",
-    price: "60 €",
+    options: [{ duration: "30 min", price: "60 €", href: `${ACUITY}/97914126/calendar/14510928` }],
   },
 ];
 
