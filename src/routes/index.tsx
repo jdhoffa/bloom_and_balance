@@ -332,51 +332,45 @@ function Faq() {
 
 function Booking() {
   return (
-    <section id="booking" className="section-pad bg-celadon/25">
+    <section id="booking" className="bg-celadon/25 py-16 md:py-20">
       <div className="mx-auto max-w-[720px] px-5 text-center">
         <h2 className="text-3xl md:text-4xl">Ready to book?</h2>
-        <p className="mt-4 text-foreground/80">
-          I offer sessions in{" "}
+        <p className="mt-3 text-foreground/80">
+          Sessions offered in{" "}
           <strong className="font-semibold text-foreground">
             English, German, and Russian
           </strong>
           .
         </p>
-        <p className="mt-3 text-foreground/80">
-          Follow the link below to book your appointment through Acuity Scheduling.
-        </p>
-        <div className="mt-8 flex justify-center">
+        <div className="mt-7 flex justify-center">
           <BookButton />
         </div>
-        <div className="mt-8 border-t border-border/60 pt-5">
-          <p className="text-foreground/80">Questions first?</p>
-          <div className="mt-5 flex flex-wrap justify-center gap-3">
-            <a
-              href={`mailto:${contact.email}`}
-              className="inline-flex items-center gap-2 rounded-full border border-border bg-background/70 px-4 py-2 text-base font-medium transition hover:bg-background"
-            >
-              <Mail className="size-4" aria-hidden />
-              {contact.email}
-            </a>
-            <a
-              href={contact.whatsappUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 rounded-full border border-border bg-background/70 px-4 py-2 text-base font-medium transition hover:bg-background"
-            >
-              <WhatsAppIcon className="size-4 text-[#25D366]" />
-              WhatsApp
-            </a>
-            <a
-              href={contact.instagram}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 rounded-full border border-border bg-background/70 px-4 py-2 text-base font-medium transition hover:bg-background"
-            >
-              <Instagram className="size-4" aria-hidden />
-              Instagram
-            </a>
-          </div>
+        <div className="mt-8 flex flex-wrap justify-center gap-2.5">
+          <a
+            href={`mailto:${contact.email}`}
+            className="inline-flex items-center gap-2 rounded-full border border-border bg-background/70 px-4 py-2 text-sm font-medium transition hover:bg-background"
+          >
+            <Mail className="size-4" aria-hidden />
+            {contact.email}
+          </a>
+          <a
+            href={contact.whatsappUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 rounded-full border border-border bg-background/70 px-4 py-2 text-sm font-medium transition hover:bg-background"
+          >
+            <WhatsAppIcon className="size-4 text-[#25D366]" />
+            WhatsApp
+          </a>
+          <a
+            href={contact.instagram}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 rounded-full border border-border bg-background/70 px-4 py-2 text-sm font-medium transition hover:bg-background"
+          >
+            <Instagram className="size-4" aria-hidden />
+            Instagram
+          </a>
         </div>
       </div>
     </section>
