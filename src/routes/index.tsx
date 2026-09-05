@@ -64,10 +64,12 @@ function Hero() {
 }
 
 function MeetAngie() {
+  const [aboutOpen, setAboutOpen] = useState(false);
+
   return (
     <section id="meet-angie" className="section-pad bg-cream">
-      <div className="mx-auto grid max-w-[1160px] gap-12 px-5 md:grid-cols-[1fr_1.25fr] md:items-center">
-        <div className="relative mx-auto w-full max-w-sm">
+      <div className="mx-auto grid max-w-[1160px] gap-8 px-5 md:grid-cols-[1fr_1.25fr] md:items-center md:gap-12">
+        <div className="relative mx-auto w-full max-w-[220px] md:max-w-sm">
           <div
             aria-hidden
             className="absolute -inset-3 rotate-3 rounded-[2rem] bg-peach/25"
@@ -87,24 +89,50 @@ function MeetAngie() {
         </div>
 
         <div>
-          <h2 className="text-3xl md:text-4xl">Meet Angie</h2>
-          <p className="mt-5 text-foreground/80">
-            Born in Moscow, I moved to England at a young age and went on to study at the British
-            College of Osteopathic Medicine in London where in 2019 I was awarded a Master of
-            Osteopathy degree with commendation. The following year I also completed a
-            specialisation course in paediatrics at the Osteopathic Centre for Children in London.
-          </p>
-          <p className="mt-4 text-foreground/80">
-            In 2021, I moved to Berlin and continued working as a manual therapist, initially in a
-            family practice and later in a private orthopaedic clinic. During this period, I
-            developed a strong interest in preventative treatments, as well as buccal techniques
-            that help release the stress and emotional tension we often carry in our faces.
-          </p>
-          <p className="mt-4 text-foreground/80">
-            After six years, I felt ready to create my own space — a place where I could bring
-            together my knowledge, experience, and passion for holistic wellbeing and natural
-            beauty. That&apos;s where the idea for Bloom &amp; Balance began to form.
-          </p>
+          <div className="flex items-center justify-between gap-4 md:block">
+            <h2 className="text-3xl md:text-4xl">Meet Angie</h2>
+            <button
+              type="button"
+              onClick={() => setAboutOpen((v) => !v)}
+              aria-expanded={aboutOpen}
+              aria-controls="about-angie"
+              className="inline-flex items-center gap-1.5 rounded-full border border-border bg-background/70 px-3 py-1.5 text-xs font-medium uppercase tracking-[0.15em] text-foreground/70 transition hover:bg-background md:hidden"
+            >
+              About
+              <ChevronDown
+                aria-hidden
+                className={cn(
+                  "size-4 transition-transform",
+                  aboutOpen && "rotate-180",
+                )}
+              />
+            </button>
+          </div>
+          <div
+            id="about-angie"
+            className={cn(
+              "overflow-hidden md:!block",
+              aboutOpen ? "mt-5 block" : "hidden",
+            )}
+          >
+            <p className="text-foreground/80 md:mt-5">
+              Born in Moscow, I moved to England at a young age and went on to study at the British
+              College of Osteopathic Medicine in London where in 2019 I was awarded a Master of
+              Osteopathy degree with commendation. The following year I also completed a
+              specialisation course in paediatrics at the Osteopathic Centre for Children in London.
+            </p>
+            <p className="mt-4 text-foreground/80">
+              In 2021, I moved to Berlin and continued working as a manual therapist, initially in a
+              family practice and later in a private orthopaedic clinic. During this period, I
+              developed a strong interest in preventative treatments, as well as buccal techniques
+              that help release the stress and emotional tension we often carry in our faces.
+            </p>
+            <p className="mt-4 text-foreground/80">
+              After six years, I felt ready to create my own space — a place where I could bring
+              together my knowledge, experience, and passion for holistic wellbeing and natural
+              beauty. That&apos;s where the idea for Bloom &amp; Balance began to form.
+            </p>
+          </div>
         </div>
       </div>
     </section>
@@ -155,6 +183,7 @@ function Philosophy() {
 
 function Expect() {
   const [mode, setMode] = useState<"adult" | "baby">("adult");
+  const [openStep, setOpenStep] = useState<number | null>(null);
 
   return (
     <section id="expect" className="section-pad bg-cream">
@@ -193,14 +222,44 @@ function Expect() {
 
         {mode === "adult" ? (
           <>
-            <ol className="mt-10 grid gap-5 sm:grid-cols-2">
-              {steps.map((s, i) => (
-                <li key={s.title} className="card-soft p-7">
-                  <span className="accent-text text-lg">{String(i + 1).padStart(2, "0")}</span>
-                  <h3 className="mt-1 text-xl">{s.title}</h3>
-                  <p className="mt-2 text-foreground/80">{s.body}</p>
-                </li>
-              ))}
+            <ol className="mt-8 grid gap-3 sm:mt-10 sm:grid-cols-2 sm:gap-5">
+              {steps.map((s, i) => {
+                const isOpen = openStep === i;
+                return (
+                  <li key={s.title} className="card-soft p-4 sm:p-7">
+                    <button
+                      type="button"
+                      onClick={() => setOpenStep(isOpen ? null : i)}
+                      aria-expanded={isOpen}
+                      aria-controls={`step-body-${i}`}
+                      className="flex w-full items-center justify-between gap-3 text-left sm:pointer-events-none"
+                    >
+                      <div className="min-w-0">
+                        <span className="accent-text text-sm sm:text-lg">
+                          {String(i + 1).padStart(2, "0")}
+                        </span>
+                        <h3 className="mt-0.5 text-base sm:mt-1 sm:text-xl">{s.title}</h3>
+                      </div>
+                      <ChevronDown
+                        aria-hidden
+                        className={cn(
+                          "size-5 shrink-0 text-celadon transition-transform sm:hidden",
+                          isOpen && "rotate-180",
+                        )}
+                      />
+                    </button>
+                    <p
+                      id={`step-body-${i}`}
+                      className={cn(
+                        "text-foreground/80 sm:!mt-2 sm:!block",
+                        isOpen ? "mt-3 block" : "hidden",
+                      )}
+                    >
+                      {s.body}
+                    </p>
+                  </li>
+                );
+              })}
             </ol>
             <p className="mt-6 text-base text-foreground/85">
               <span className="font-medium text-foreground">Disclaimer · </span>
@@ -265,10 +324,10 @@ function Services() {
           {services.map((s) => (
             <li
               key={s.name}
-              className="flex flex-col gap-3 py-4 sm:flex-row sm:items-center sm:justify-between sm:gap-6"
+              className="flex flex-col gap-2 py-4 sm:flex-row sm:items-center sm:justify-between sm:gap-6"
             >
               <p className="font-medium">{s.name}</p>
-              <div className="flex flex-wrap gap-2 sm:shrink-0 sm:justify-end">
+              <div className="flex flex-col sm:flex-row sm:flex-wrap sm:gap-2 sm:shrink-0 sm:justify-end">
                 {s.options.map((opt) => (
                   <a
                     key={opt.href}
@@ -276,7 +335,7 @@ function Services() {
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label={`Book ${s.name}, ${opt.duration}, ${opt.price}`}
-                    className="group inline-flex items-center gap-1.5 rounded-lg px-3 py-1.5 text-sm transition hover:bg-peach/15 focus-visible:bg-peach/15 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring"
+                    className="group inline-flex items-center gap-1.5 py-1.5 text-sm transition sm:rounded-lg sm:px-3 sm:hover:bg-peach/15 sm:focus-visible:bg-peach/15 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring"
                   >
                     <span className="text-foreground/85">{opt.duration}</span>
                     <span className="text-foreground/40">·</span>
@@ -336,7 +395,8 @@ function Booking() {
       <div className="mx-auto max-w-[720px] px-5 text-center">
         <h2 className="text-3xl md:text-4xl">Ready to book?</h2>
         <p className="mt-3 text-foreground/80">
-          Sessions offered in{" "}
+          Sessions offered in
+          <br />
           <strong className="font-semibold text-foreground">
             English, German, and Russian
           </strong>
