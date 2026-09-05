@@ -300,7 +300,7 @@ function Faq() {
   return (
     <section id="faq" className="section-pad bg-lavender/40">
       <div className="mx-auto max-w-[760px] px-5">
-        <h2 className="text-3xl md:text-4xl">Frequently asked</h2>
+        <h2 className="text-3xl md:text-4xl">Frequently asked questions</h2>
         <div className="mt-8 border-t border-border">
           {faqs.map((f) => (
             <details key={f.q} className="group border-b border-border py-4">
