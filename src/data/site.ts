@@ -1,5 +1,4 @@
 // Central content file — non-technical edits happen here.
-// [PLACEHOLDER] markers show what still needs real copy from Angie.
 
 export const BOOKING_URL = "https://app.acuityscheduling.com/schedule.php?owner=40285797";
 

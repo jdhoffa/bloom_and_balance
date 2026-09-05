@@ -1,4 +1,5 @@
 import { Link } from "@tanstack/react-router";
+import { Menu, X } from "lucide-react";
 import { useEffect, useState } from "react";
 
 import { BookButton } from "@/components/BookButton";
@@ -39,15 +40,25 @@ export function Header() {
         scrolled ? "shadow-[0_2px_12px_rgba(0,0,0,0.05)]" : ""
       }`}
     >
-      <div className="mx-auto grid max-w-[1160px] grid-cols-[1fr_auto_1fr] items-center gap-6 px-5 py-3">
+      <div className="mx-auto grid max-w-[1160px] grid-cols-[auto_1fr_auto] items-center gap-6 px-5 py-3 lg:grid-cols-[1fr_auto_1fr]">
+        <button
+          type="button"
+          onClick={() => setOpen((v) => !v)}
+          aria-expanded={open}
+          aria-controls="mobile-nav"
+          aria-label={open ? "Close menu" : "Open menu"}
+          className="justify-self-start rounded-lg p-2 text-foreground/80 transition hover:bg-foreground/5 lg:hidden"
+        >
+          {open ? <X className="size-6" aria-hidden /> : <Menu className="size-6" aria-hidden />}
+        </button>
         <Link
           to="/"
           hash="top"
           aria-label="Bloom and Balance, Freiburg"
-          className={`justify-self-start transition-[opacity,transform] duration-200 ease-out motion-reduce:transition-none ${
+          className={`hidden justify-self-start transition-[opacity,transform] duration-200 ease-out motion-reduce:transition-none lg:block ${
             heroInView
-              ? "md:pointer-events-none md:-translate-y-1.5 md:opacity-0"
-              : "md:pointer-events-auto md:translate-y-0 md:opacity-100"
+              ? "lg:pointer-events-none lg:-translate-y-1.5 lg:opacity-0"
+              : "lg:pointer-events-auto lg:translate-y-0 lg:opacity-100"
           }`}
         >
           <Wordmark />
@@ -74,15 +85,6 @@ export function Header() {
               <span className="hidden sm:inline">Book Your Session</span>
             </BookButton>
           </div>
-          <button
-            type="button"
-            onClick={() => setOpen((v) => !v)}
-            aria-expanded={open}
-            aria-controls="mobile-nav"
-            className="rounded-lg border border-border px-3 py-2 text-sm font-medium lg:hidden"
-          >
-            {open ? "Close" : "Menu"}
-          </button>
         </div>
       </div>
       {open && (

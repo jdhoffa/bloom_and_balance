@@ -11,11 +11,11 @@ German legal pages, etc.) before making changes.
 ## Development
 
 ```sh
-npm install
-npm run dev      # Vite dev server
-npm run build    # Static build → dist/client/
-npm run preview  # Serve the built output locally
-npm run lint
+bun install
+bun run dev      # Vite dev server
+bun run build    # Static build → dist/client/
+bun run preview  # Serve the built output locally
+bun run lint
 ```
 
 ## Stack
