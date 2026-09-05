@@ -37,7 +37,7 @@ export const impressum: {
     intro: [
       "This English version is a non-binding translation. The legally binding version is the German original.",
     ],
-    tmgHeader: "Information pursuant to § 5 TMG (German Telemedia Act):",
+    tmgHeader: "Information pursuant to § 5 TMG:",
     contactLabel: "Contact:",
     emailLabel: "Email:",
     copyright: {
