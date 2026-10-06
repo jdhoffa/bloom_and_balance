@@ -103,10 +103,10 @@ function MeetAngie() {
             className={cn("md:!block", aboutOpen ? "block" : "hidden")}
           >
             <p className="mt-4 text-foreground/80">
-              In 2021, I moved to Berlin and continued working as a manual therapist, initially in a
-              family practice and later in a private orthopaedic clinic. During this period, I
-              developed a strong interest in preventative treatments, as well as buccal techniques
-              that help release the stress and emotional tension we often carry in our faces.
+              In 2021, I moved to Berlin and continued my work as a manual therapist, first in a
+              family practice and later in a private orthopaedic clinic. During this time, I
+              developed a strong interest in preventative and aesthetic treatments and pursued
+              further training in buccal and facial techniques.
             </p>
             <p className="mt-4 text-foreground/80">
               After six years, I felt ready to create my own space — a place where I could bring
@@ -158,6 +158,7 @@ function Philosophy() {
               "Lymphatic and fascial massage",
               "Body awareness techniques to recognise your stress patterns",
               "Gentle mobilisations and stretches to promote deep relaxation and restore vitality",
+              "Kobido facial lift massage",
               "Buccal massage",
             ].map((item) => (
               <li key={item} className="flex items-start gap-3">
