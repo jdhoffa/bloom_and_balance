@@ -39,6 +39,16 @@ export const services = [
     ],
   },
   {
+    name: "Kobido massage",
+    options: [
+      {
+        duration: "60 min",
+        price: "100 €",
+        href: "https://app.acuityscheduling.com/schedule.php?owner=40285797&appointmentType=99131492",
+      },
+    ],
+  },
+  {
     name: "Buccal massage focus session",
     options: [{ duration: "30 min", price: "50 €", href: `${ACUITY}/97795459/calendar/14510928` }],
   },
@@ -67,7 +77,7 @@ export const steps = [
   },
   {
     title: "Head and Neck",
-    body: "This part of your session may incorporate Scalp, Facial and Buccal massage techniques, to promote a glowing appearance.",
+    body: "This part of your session may incorporate Scalp, Kobido and Buccal massage techniques, to promote a glowing appearance.",
   },
 ];
 

@@ -26,6 +26,7 @@ export default defineConfig({
         { path: "/impressum", prerender: { enabled: true } },
         { path: "/datenschutz", prerender: { enabled: true } },
         { path: "/agb", prerender: { enabled: true } },
+        { path: "/flyer", prerender: { enabled: true } },
       ],
       prerender: { enabled: true, crawlLinks: false },
     }),

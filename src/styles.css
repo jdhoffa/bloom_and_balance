@@ -256,3 +256,21 @@
   }
 }
 
+@media print {
+  @page {
+    size: A4;
+    margin: 0;
+  }
+  html,
+  body {
+    background: white;
+  }
+  .flyer-screen {
+    padding: 0 !important;
+    background: white !important;
+  }
+  .flyer-page {
+    box-shadow: none !important;
+  }
+}
+

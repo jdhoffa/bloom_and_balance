@@ -4,6 +4,7 @@ import {
   Link,
   createRootRouteWithContext,
   useRouter,
+  useRouterState,
   HeadContent,
   Scripts,
 } from "@tanstack/react-router";
@@ -126,8 +127,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { title: "Bloom & Balance — Massage & Wellness in Freiburg" },
       {
         name: "description",
-        content:
-          "Bloom & Balance: warm, unhurried massage and bodywork with Angie in Freiburg. Book your session online.",
+        content: "Holistic Bodywork sessions, Buccal and Kobido massage with Angie in Freiburg.",
       },
       { name: "author", content: "Bloom & Balance" },
       { property: "og:site_name", content: "Bloom & Balance" },
@@ -137,7 +137,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { property: "og:title", content: "Bloom & Balance — Massage & Wellness in Freiburg" },
       {
         property: "og:description",
-        content: "Warm, unhurried massage and bodywork with Angie in Freiburg.",
+        content: "Holistic Bodywork sessions, Buccal and Kobido massage with Angie in Freiburg.",
       },
       { property: "og:url", content: `${SITE_URL}/` },
       { property: "og:image", content: `${SITE_URL}/og.png` },
@@ -148,7 +148,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { name: "twitter:title", content: "Bloom & Balance — Massage & Wellness in Freiburg" },
       {
         name: "twitter:description",
-        content: "Warm, unhurried massage and bodywork with Angie in Freiburg.",
+        content: "Holistic Bodywork sessions, Buccal and Kobido massage with Angie in Freiburg.",
       },
       { name: "twitter:image", content: `${SITE_URL}/og.png` },
     ],
@@ -206,6 +206,17 @@ function RootShell({ children }: { children: ReactNode }) {
 
 function RootComponent() {
   const { queryClient } = Route.useRouteContext();
+  const isFlyer = useRouterState({
+    select: (s) => s.location.pathname.startsWith("/flyer"),
+  });
+
+  if (isFlyer) {
+    return (
+      <QueryClientProvider client={queryClient}>
+        <Outlet />
+      </QueryClientProvider>
+    );
+  }
 
   return (
     <QueryClientProvider client={queryClient}>
