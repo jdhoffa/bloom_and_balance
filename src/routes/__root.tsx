@@ -127,7 +127,8 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { title: "Bloom & Balance — Massage & Wellness in Freiburg" },
       {
         name: "description",
-        content: "Holistic Bodywork sessions, Buccal and Kobido massage with Angie in Freiburg.",
+        content:
+          "Holistic Bodywork sessions, Buccal, Kobido and Baby massage with Angie in Freiburg.",
       },
       { name: "author", content: "Bloom & Balance" },
       { property: "og:site_name", content: "Bloom & Balance" },
@@ -137,7 +138,8 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { property: "og:title", content: "Bloom & Balance — Massage & Wellness in Freiburg" },
       {
         property: "og:description",
-        content: "Holistic Bodywork sessions, Buccal and Kobido massage with Angie in Freiburg.",
+        content:
+          "Holistic Bodywork sessions, Buccal, Kobido and Baby massage with Angie in Freiburg.",
       },
       { property: "og:url", content: `${SITE_URL}/` },
       { property: "og:image", content: `${SITE_URL}/og.png` },
@@ -148,7 +150,8 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { name: "twitter:title", content: "Bloom & Balance — Massage & Wellness in Freiburg" },
       {
         name: "twitter:description",
-        content: "Holistic Bodywork sessions, Buccal and Kobido massage with Angie in Freiburg.",
+        content:
+          "Holistic Bodywork sessions, Buccal, Kobido and Baby massage with Angie in Freiburg.",
       },
       { name: "twitter:image", content: `${SITE_URL}/og.png` },
     ],
