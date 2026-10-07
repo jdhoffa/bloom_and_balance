@@ -155,11 +155,10 @@ function Philosophy() {
           <ul className="mt-5 space-y-2.5 text-foreground/85">
             {[
               "My background in osteopathy",
+              "Kobido and Buccal massage",
               "Lymphatic and fascial massage",
               "Body awareness techniques to recognise your stress patterns",
               "Gentle mobilisations and stretches to promote deep relaxation and restore vitality",
-              "Kobido facial lift massage",
-              "Buccal massage",
             ].map((item) => (
               <li key={item} className="flex items-start gap-3">
                 <span
