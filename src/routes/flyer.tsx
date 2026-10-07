@@ -52,21 +52,34 @@ function Flyer() {
 
         <section className="mt-16 space-y-7 font-serif text-[18px] leading-[1.55] text-taupe">
           <p>
-            Hallo, ich bin Angie – Wellness-Massagetherapeutin. Ich arbeite hier an ausgewählten
-            Donnerstagen und Samstagen und biete spezielle Bodywork-Sitzungen an, bei denen{" "}
-            <Accent>Körperhaltung</Accent>, <Accent>Beweglichkeit</Accent>, <Accent>Atmung</Accent>{" "}
-            und <Accent>Entspannung</Accent> im Mittelpunkt stehen.
+            Hallo, ich bin Angie – <Accent>Wellness-Massagetherapeutin</Accent>.
           </p>
 
-          <p>
-            Außerdem biete ich <Accent>Buccal und Kobido Face Lift Massage</Accent> an, die dabei
-            unterstützen kann, aufgestaute emotionale Anspannung und Stress im Gesicht zu lösen.
-          </p>
+          <p>An ausgewählten Donnerstagen und Samstagen bin ich in diesem Studio für dich da.</p>
+
+          <p>Ich biete ganzheitliche Körpertherapie-Sitzungen an, darunter:</p>
+
+          <ul className="list-disc space-y-1 pl-6">
+            <li>
+              <Accent>Ganzheitliche Massagen</Accent>
+            </li>
+            <li>
+              <Accent>Buccal-Massage (Kiefermassage)</Accent>
+            </li>
+            <li>
+              <Accent>Kobido Facial Sculpting</Accent>
+            </li>
+            <li>
+              <Accent>Babymassage</Accent>
+            </li>
+          </ul>
 
           <p>
-            Scannen Sie einfach den QR-Code, um mehr über mich und meine Arbeitsweise zu erfahren
-            und einen Termin zu vereinbaren.
+            Scanne den QR-Code, um mehr über mich und meine Arbeitsweise zu erfahren oder direkt
+            einen Termin zu vereinbaren.
           </p>
+
+          <p>Ich freue mich darauf, dich bald willkommen zu heißen.</p>
         </section>
 
         <footer className="mt-auto flex items-end justify-between gap-6">
