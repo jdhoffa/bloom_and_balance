@@ -1,4 +1,4 @@
-import { Link } from "@tanstack/react-router";
+import { Link, useRouterState } from "@tanstack/react-router";
 import { Instagram, Mail } from "lucide-react";
 
 import { WhatsAppIcon } from "@/components/WhatsAppIcon";
@@ -6,6 +6,10 @@ import { Wordmark } from "@/components/Wordmark";
 import { contact } from "@/data/site";
 
 export function Footer() {
+  const isEnglish = useRouterState({
+    select: (s) => s.location.pathname.startsWith("/en"),
+  });
+
   return (
     <footer className="border-t border-border bg-background">
       <div className="mx-auto max-w-[1160px] px-5 py-14 md:py-16">
@@ -19,12 +23,18 @@ export function Footer() {
             </address>
           </div>
           <div>
-            <h3 className="text-lg font-semibold">Opening Times</h3>
-            <p className="mt-4 text-foreground/85">Thursday &amp; Saturday</p>
-            <p className="mt-1 text-foreground/85">by appointment</p>
+            <h3 className="text-lg font-semibold">
+              {isEnglish ? "Opening Times" : "Öffnungszeiten"}
+            </h3>
+            <p className="mt-4 text-foreground/85">
+              {isEnglish ? "Thursday & Saturday" : "Donnerstag & Samstag"}
+            </p>
+            <p className="mt-1 text-foreground/85">
+              {isEnglish ? "by appointment" : "nach Vereinbarung"}
+            </p>
           </div>
           <div>
-            <h3 className="text-lg font-semibold">Contact</h3>
+            <h3 className="text-lg font-semibold">{isEnglish ? "Contact" : "Kontakt"}</h3>
             <ul className="mt-4 space-y-2 text-sm">
               <li>
                 <a

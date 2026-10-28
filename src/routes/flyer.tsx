@@ -52,10 +52,13 @@ function Flyer() {
 
         <section className="mt-16 space-y-7 font-serif text-[18px] leading-[1.55] text-taupe">
           <p>
-            Hallo, ich bin Angie – <Accent>Wellness-Massagetherapeutin</Accent>.
+            Hallo, ich bin Angie - <Accent>Wellness-Massagetherapeutin</Accent>.
           </p>
 
-          <p>An ausgewählten Donnerstagen und Samstagen bin ich in diesem Studio für dich da.</p>
+          <p>
+            An ausgewählten Donnerstagen und Samstagen bin ich im Hamsa Studio, Hildastraße 17,
+            für dich da.
+          </p>
 
           <p>Ich biete ganzheitliche Körpertherapie-Sitzungen an, darunter:</p>
 
@@ -67,7 +70,7 @@ function Flyer() {
               <Accent>Buccal-Massage (Kiefermassage)</Accent>
             </li>
             <li>
-              <Accent>Kobido Facial Sculpting</Accent>
+              <Accent>Kobido Facial Sculpting (Gesichtsmassage)</Accent>
             </li>
             <li>
               <Accent>Babymassage</Accent>

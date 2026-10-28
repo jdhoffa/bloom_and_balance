@@ -83,6 +83,9 @@ function Impressum() {
               {impressum.email}
             </a>
           </p>
+          <p className="mt-3 text-foreground/85">
+            {content.vatLabel} {impressum.vatNumber}
+          </p>
 
           <h2 className="mt-10 text-xl font-semibold">{content.copyright.title}</h2>
           <div className="mt-3 space-y-3 text-foreground/85">

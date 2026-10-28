@@ -12,6 +12,7 @@ import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as AgbRouteImport } from './routes/agb'
 import { Route as DatenschutzRouteImport } from './routes/datenschutz'
+import { Route as EnRouteImport } from './routes/en'
 import { Route as FlyerRouteImport } from './routes/flyer'
 import { Route as ImpressumRouteImport } from './routes/impressum'
 
@@ -30,6 +31,11 @@ const DatenschutzRoute = DatenschutzRouteImport.update({
   path: '/datenschutz',
   getParentRoute: () => rootRouteImport,
 } as any)
+const EnRoute = EnRouteImport.update({
+  id: '/en',
+  path: '/en',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const FlyerRoute = FlyerRouteImport.update({
   id: '/flyer',
   path: '/flyer',
@@ -45,6 +51,7 @@ export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/agb': typeof AgbRoute
   '/datenschutz': typeof DatenschutzRoute
+  '/en': typeof EnRoute
   '/flyer': typeof FlyerRoute
   '/impressum': typeof ImpressumRoute
 }
@@ -52,6 +59,7 @@ export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/agb': typeof AgbRoute
   '/datenschutz': typeof DatenschutzRoute
+  '/en': typeof EnRoute
   '/flyer': typeof FlyerRoute
   '/impressum': typeof ImpressumRoute
 }
@@ -60,21 +68,24 @@ export interface FileRoutesById {
   '/': typeof IndexRoute
   '/agb': typeof AgbRoute
   '/datenschutz': typeof DatenschutzRoute
+  '/en': typeof EnRoute
   '/flyer': typeof FlyerRoute
   '/impressum': typeof ImpressumRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/agb' | '/datenschutz' | '/flyer' | '/impressum'
+  fullPaths: '/' | '/agb' | '/datenschutz' | '/en' | '/flyer' | '/impressum'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/agb' | '/datenschutz' | '/flyer' | '/impressum'
-  id: '__root__' | '/' | '/agb' | '/datenschutz' | '/flyer' | '/impressum'
+  to: '/' | '/agb' | '/datenschutz' | '/en' | '/flyer' | '/impressum'
+  id:
+    '__root__' | '/' | '/agb' | '/datenschutz' | '/en' | '/flyer' | '/impressum'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AgbRoute: typeof AgbRoute
   DatenschutzRoute: typeof DatenschutzRoute
+  EnRoute: typeof EnRoute
   FlyerRoute: typeof FlyerRoute
   ImpressumRoute: typeof ImpressumRoute
 }
@@ -102,6 +113,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof DatenschutzRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/en': {
+      id: '/en'
+      path: '/en'
+      fullPath: '/en'
+      preLoaderRoute: typeof EnRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/flyer': {
       id: '/flyer'
       path: '/flyer'
@@ -123,6 +141,7 @@ const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AgbRoute: AgbRoute,
   DatenschutzRoute: DatenschutzRoute,
+  EnRoute: EnRoute,
   FlyerRoute: FlyerRoute,
   ImpressumRoute: ImpressumRoute,
 }
