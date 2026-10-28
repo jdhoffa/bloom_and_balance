@@ -5,20 +5,39 @@ import { useState } from "react";
 import { BookButton } from "@/components/BookButton";
 import { WhatsAppIcon } from "@/components/WhatsAppIcon";
 import {
-  aftercareDisclaimer,
-  babySession,
+  aftercareDisclaimerDE,
+  babySessionDE,
   contact,
-  faqs,
-  services,
-  steps,
+  faqsDE,
+  servicesDE,
+  stepsDE,
 } from "@/data/site";
 import { cn } from "@/lib/utils";
 
+const SITE_URL = "https://bloom-balance-wellness.com";
+
 export const Route = createFileRoute("/")({
   head: () => ({
-    links: [{ rel: "canonical", href: "https://bloom-balance-wellness.com/" }],
+    meta: [
+      { title: "Bloom & Balance — Massage & Wellness in Freiburg" },
+      {
+        name: "description",
+        content:
+          "Ganzheitliche Körpertherapie, Buccal-, Kobido- und Babymassage mit Angie in Freiburg.",
+      },
+      { property: "og:title", content: "Bloom & Balance — Massage & Wellness in Freiburg" },
+      {
+        property: "og:description",
+        content:
+          "Ganzheitliche Körpertherapie, Buccal-, Kobido- und Babymassage mit Angie in Freiburg.",
+      },
+      { property: "og:url", content: `${SITE_URL}/` },
+      { property: "og:locale", content: "de_DE" },
+      { property: "og:locale:alternate", content: "en_US" },
+    ],
+    links: [{ rel: "canonical", href: `${SITE_URL}/` }],
   }),
-  component: Index,
+  component: DeIndex,
 });
 
 function Hero() {
@@ -39,24 +58,24 @@ function Hero() {
         </div>
         <div className="flex flex-col items-stretch gap-3 sm:flex-row sm:flex-wrap sm:items-center sm:justify-center sm:gap-4">
           <BookButton size="sm" className="sm:px-6 sm:py-3 sm:text-base">
-            Book Your Session
+            Termin buchen
           </BookButton>
           <a
             href="#services"
             className="inline-flex items-center justify-center rounded-xl border-2 border-celadon bg-background/60 px-4 py-2 text-sm font-medium text-foreground backdrop-blur transition hover:bg-celadon/20 sm:px-6 sm:py-3 sm:text-base"
           >
-            View services
+            Behandlungen ansehen
           </a>
         </div>
       </div>
       <div className="pointer-events-none absolute inset-x-0 bottom-6 flex justify-center">
         <a
           href="#meet-angie"
-          aria-label="Scroll to Meet Angie"
+          aria-label="Scroll zu über mich"
           className="scroll-hint pointer-events-auto flex flex-col items-center gap-1.5 text-taupe/60 transition-colors hover:text-taupe"
         >
           <span className="pl-[0.3em] text-[0.7rem] font-medium uppercase tracking-[0.3em]">
-            Meet Angie
+            über mich
           </span>
           <ChevronDown className="size-5" aria-hidden />
         </a>
@@ -72,18 +91,12 @@ function MeetAngie() {
     <section id="meet-angie" className="section-pad bg-cream">
       <div className="mx-auto grid max-w-[1160px] gap-8 px-5 md:grid-cols-[1fr_1.25fr] md:items-center md:gap-12">
         <div className="relative mx-auto w-full max-w-[240px] md:max-w-sm">
-          <div
-            aria-hidden
-            className="absolute -inset-3 rotate-3 rounded-[2rem] bg-peach/25"
-          />
-          <div
-            aria-hidden
-            className="absolute -inset-2 -rotate-2 rounded-[1.75rem] bg-lavender/45"
-          />
+          <div aria-hidden className="absolute -inset-3 rotate-3 rounded-[2rem] bg-peach/25" />
+          <div aria-hidden className="absolute -inset-2 -rotate-2 rounded-[1.75rem] bg-lavender/45" />
           <div className="relative aspect-[4/5] overflow-hidden rounded-[1.5rem] shadow-[0_8px_30px_rgba(0,0,0,0.10)]">
             <img
               src="/angie.png"
-              alt="Angie, massage therapist at Bloom and Balance in Freiburg"
+              alt="Angie, Wellness-Massagetherapeutin bei Bloom and Balance in Freiburg"
               loading="lazy"
               className="h-full w-full origin-center scale-[1.15] object-cover object-[50%_30%]"
             />
@@ -91,37 +104,40 @@ function MeetAngie() {
         </div>
 
         <div>
-          <h2 className="text-3xl md:text-4xl">Meet Angie</h2>
+          <h2 className="text-3xl md:text-4xl">Hallo, ich bin Angie.</h2>
           <p className="mt-5 text-foreground/80">
-            Born in Moscow, I moved to England at a young age and went on to study at the British
-            College of Osteopathic Medicine in London where in 2019 I was awarded a Master of
-            Osteopathy degree with commendation. The following year I also completed a
-            specialisation course in paediatrics at the Osteopathic Centre for Children in London.
+            Ich wurde in Moskau geboren, zog schon in jungen Jahren nach England und studierte
+            anschließend am British College of Osteopathic Medicine in London, wo ich 2019 meinen
+            Master of Osteopathy mit Auszeichnung abschloss. Im darauffolgenden Jahr absolvierte
+            ich zudem einen Spezialisierungskurs in Pädiatrie am Osteopathic Centre for Children
+            in London.
           </p>
           <div
-            id="about-angie-more"
+            id="about-angie-more-de"
             className={cn("md:!block", aboutOpen ? "block" : "hidden")}
           >
             <p className="mt-4 text-foreground/80">
-              In 2021, I moved to Berlin and continued my work as a manual therapist, first in a
-              family practice and later in a private orthopaedic clinic. During this time, I
-              developed a strong interest in preventative and aesthetic treatments and pursued
-              further training in buccal and facial techniques.
+              Im Jahr 2021 zog ich nach Berlin und setzte meine Tätigkeit als manuelle Therapeutin
+              fort, zunächst in einer Familienpraxis und später in einer privaten orthopädischen
+              Klinik. Während dieser Zeit entwickelte ich ein starkes Interesse an präventiven und
+              ästhetischen Behandlungen und absolvierte Fortbildungen in Kiefer- und
+              Gesichtstechniken.
             </p>
             <p className="mt-4 text-foreground/80">
-              After six years, I felt ready to create my own space — a place where I could bring
-              together my knowledge, experience, and passion for holistic wellbeing and natural
-              beauty. That&apos;s where the idea for Bloom &amp; Balance began to form.
+              Nach sechs Jahren fühlte ich mich bereit, meinen eigenen Raum zu schaffen – einen
+              Ort, an dem ich mein Wissen, meine Erfahrung und meine Leidenschaft für ganzheitliches
+              Wohlbefinden und natürliche Schönheit vereinen konnte. So entstand die Idee für
+              Bloom &amp; Balance.
             </p>
           </div>
           <button
             type="button"
             onClick={() => setAboutOpen((v) => !v)}
             aria-expanded={aboutOpen}
-            aria-controls="about-angie-more"
+            aria-controls="about-angie-more-de"
             className="mt-3 inline-flex items-center gap-1 text-sm font-medium text-celadon underline-offset-4 hover:underline md:hidden"
           >
-            {aboutOpen ? "Read less" : "Read more"}
+            {aboutOpen ? "Weniger lesen" : "Mehr lesen"}
             <ChevronDown
               aria-hidden
               className={cn("size-4 transition-transform", aboutOpen && "rotate-180")}
@@ -133,32 +149,32 @@ function MeetAngie() {
   );
 }
 
-function Philosophy() {
+function Philosophie() {
   return (
     <section id="philosophy" className="section-pad bg-lavender/50">
       <div className="mx-auto max-w-[820px] px-5 text-center">
         <p className="text-[0.8rem] font-medium uppercase tracking-[0.4em] text-peach">
-          Philosophy
+          Philosophie
         </p>
         <h2 className="mt-4 text-3xl md:text-4xl">
-          <span className="block">Harmony of Body and Mind</span>
-          <span className="mt-1 block">Beauty Inside and Out</span>
+          <span className="block">Harmonie von Körper und Geist</span>
+          <span className="mt-1 block">Schönheit von innen und außen</span>
         </h2>
         <p className="mt-8 text-foreground/80">
-          I offer a holistic approach to wellbeing and natural beauty, creating space for
-          relaxation, self-care, and mindful rejuvenation.
+          Ich biete einen ganzheitlichen Ansatz für Wohlbefinden und natürliche Schönheit und
+          schaffe Raum für Entspannung, Selfcare und achtsame Regeneration.
         </p>
         <div className="mx-auto mt-6 max-w-lg text-left">
           <p className="text-foreground/80">
-            My unique bodywork approach comes from combining:
+            Mein einzigartiger Ansatz in der Körperarbeit basiert auf einer Kombination aus:
           </p>
           <ul className="mt-5 space-y-2.5 text-foreground/85">
             {[
-              "My background in osteopathy",
-              "Kobido and Buccal massage",
-              "Lymphatic and fascial massage",
-              "Body awareness techniques to recognise your stress patterns",
-              "Gentle mobilisations and stretches to promote deep relaxation and restore vitality",
+              "meinem Hintergrund in der Osteopathie",
+              "Kobido- und Bukkalmassage",
+              "Lymph- und Faszienmassage",
+              "Techniken zur Körperwahrnehmung, um Ihre Stressmuster zu erkennen",
+              "sanften Mobilisierungen und Dehnungen, um tiefe Entspannung zu fördern und die Vitalität wiederherzustellen",
             ].map((item) => (
               <li key={item} className="flex items-start gap-3">
                 <span
@@ -183,16 +199,16 @@ function Expect() {
     <section id="expect" className="section-pad bg-cream">
       <div className="mx-auto max-w-[1000px] px-5">
         <div className="flex flex-col gap-6 sm:flex-row sm:items-end sm:justify-between">
-          <h2 className="max-w-xl text-3xl md:text-4xl">What to expect from your session</h2>
+          <h2 className="max-w-xl text-3xl md:text-4xl">Was Sie von Ihrer Sitzung erwarten können</h2>
           <div
             role="tablist"
-            aria-label="Session type"
+            aria-label="Sitzungsart"
             className="inline-flex self-start rounded-full border border-border bg-background/70 p-1 shadow-sm"
           >
             {(
               [
-                { key: "adult", label: "Adults" },
-                { key: "baby", label: "Babies" },
+                { key: "adult", label: "Erwachsene" },
+                { key: "baby", label: "Babys" },
               ] as const
             ).map((opt) => (
               <button
@@ -217,7 +233,7 @@ function Expect() {
         {mode === "adult" ? (
           <>
             <ol className="mt-8 grid gap-3 sm:mt-10 sm:grid-cols-2 sm:gap-5">
-              {steps.map((s, i) => {
+              {stepsDE.map((s, i) => {
                 const isOpen = openStep === i;
                 return (
                   <li key={s.title} className="card-soft p-4 sm:p-7">
@@ -225,7 +241,7 @@ function Expect() {
                       type="button"
                       onClick={() => setOpenStep(isOpen ? null : i)}
                       aria-expanded={isOpen}
-                      aria-controls={`step-body-${i}`}
+                      aria-controls={`step-body-de-${i}`}
                       className="flex w-full items-center justify-between gap-3 text-left sm:pointer-events-none"
                     >
                       <div className="min-w-0">
@@ -243,7 +259,7 @@ function Expect() {
                       />
                     </button>
                     <p
-                      id={`step-body-${i}`}
+                      id={`step-body-de-${i}`}
                       className={cn(
                         "text-foreground/80 sm:!mt-2 sm:!block",
                         isOpen ? "mt-3 block" : "hidden",
@@ -256,23 +272,23 @@ function Expect() {
               })}
             </ol>
             <p className="mt-6 text-base text-foreground/85">
-              <span className="font-medium text-foreground">Disclaimer · </span>
-              {aftercareDisclaimer}
+              <span className="font-medium text-foreground">Haftungsausschluss · </span>
+              {aftercareDisclaimerDE}
             </p>
           </>
         ) : (
           <div className="mt-10">
             <div className="card-soft p-7 sm:p-9">
-              <h3 className="text-xl">{babySession.tagline}</h3>
+              <h3 className="text-xl">{babySessionDE.tagline}</h3>
               <div className="mt-5 space-y-4 text-foreground/80">
-                {babySession.paragraphs.map((para, i) => (
+                {babySessionDE.paragraphs.map((para, i) => (
                   <p key={i}>{para}</p>
                 ))}
               </div>
             </div>
             <p className="mt-6 text-base text-foreground/85">
-              <span className="font-medium text-foreground">Disclaimer · </span>
-              {babySession.disclaimer}
+              <span className="font-medium text-foreground">Haftungsausschluss · </span>
+              {babySessionDE.disclaimer}
             </p>
           </div>
         )}
@@ -286,37 +302,36 @@ function Services() {
     <section id="services" className="section-pad bg-peach/20">
       <div className="mx-auto max-w-[900px] px-5">
         <div>
-          <h2 className="text-3xl md:text-4xl">Services</h2>
+          <h2 className="text-3xl md:text-4xl">Behandlungen</h2>
           <p className="mt-4 text-foreground/75">
-            Your first visit includes a wellness consultation followed by a bespoke whole body
-            session.
+            Ihr erster Besuch umfasst ein Beratungsgespräch zu Ihrem Wohlbefinden, gefolgt von
+            einer individuell auf Sie abgestimmten Ganzkörperbehandlung.
           </p>
           <p className="mt-3 text-foreground/75">
-            Follow-up sessions allow us to focus on specific areas of the body therefore less
-            time is sufficient.
+            Bei Folgeterminen können wir uns gezielt auf bestimmte Körperbereiche konzentrieren,
+            weshalb ein geringerer Zeitaufwand ausreicht.
           </p>
         </div>
 
         <div className="mt-6 rounded-xl border border-peach/50 bg-background p-4 sm:p-5">
           <span className="inline-flex items-center gap-2 rounded-full bg-peach/25 px-2.5 py-0.5 text-[0.65rem] font-semibold uppercase tracking-wider text-peach">
-            Current offer
+            Aktuelles Angebot
           </span>
           <div className="mt-2.5 flex flex-col gap-1 sm:flex-row sm:items-baseline sm:justify-between sm:gap-6">
-            <span className="text-sm font-medium">Intro session with a 50% discount</span>
+            <span className="text-sm font-medium">Kennenlern-Sitzung mit 50 % Rabatt</span>
             <span className="whitespace-nowrap font-serif text-base">
-              75 € <span className="text-muted-foreground">· 90 min</span>
+              75 € <span className="text-muted-foreground">· 90 Min.</span>
             </span>
           </div>
           <p className="mt-2.5 text-xs text-foreground/75">
-            Use code{" "}
+            Verwenden Sie den Code{" "}
             <span className="font-semibold tracking-wide text-foreground">FIRSTBLOOM</span>{" "}
-            at checkout.
+            beim Online-Bezahlvorgang.
           </p>
         </div>
 
-        {/* Mobile: whole price/duration row is the tap target. Desktop unchanged. */}
         <ul className="mt-10 flex flex-col gap-4 sm:hidden">
-          {services.map((s) => (
+          {servicesDE.map((s) => (
             <li
               key={s.name}
               className="overflow-hidden rounded-2xl border border-border bg-background shadow-sm"
@@ -331,7 +346,7 @@ function Services() {
                       href={opt.href}
                       target="_blank"
                       rel="noopener noreferrer"
-                      aria-label={`Book ${s.name}, ${opt.duration}, ${opt.price} — opens booking in a new tab`}
+                      aria-label={`${s.name} buchen, ${opt.duration}, ${opt.price} — öffnet Buchung in neuem Tab`}
                       className="flex items-center justify-between gap-3 px-5 py-3.5 text-[15px] transition active:bg-peach/15"
                     >
                       <span className="flex items-baseline gap-2">
@@ -349,7 +364,7 @@ function Services() {
         </ul>
 
         <ul className="mt-10 hidden divide-y divide-border border-y border-border sm:block">
-          {services.map((s) => (
+          {servicesDE.map((s) => (
             <li
               key={s.name}
               className="flex flex-col gap-3 py-4 sm:flex-row sm:items-center sm:justify-between sm:gap-6"
@@ -362,7 +377,7 @@ function Services() {
                     href={opt.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    aria-label={`Book ${s.name}, ${opt.duration}, ${opt.price}`}
+                    aria-label={`${s.name} buchen, ${opt.duration}, ${opt.price}`}
                     className="group inline-flex items-center gap-1.5 rounded-lg px-3 py-1.5 text-sm transition hover:bg-peach/15 focus-visible:bg-peach/15 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring"
                   >
                     <span className="text-foreground/85">{opt.duration}</span>
@@ -387,9 +402,9 @@ function Faq() {
   return (
     <section id="faq" className="section-pad bg-lavender/40">
       <div className="mx-auto max-w-[760px] px-5">
-        <h2 className="text-3xl md:text-4xl">Frequently asked questions</h2>
+        <h2 className="text-3xl md:text-4xl">Häufig gestellte Fragen</h2>
         <div className="mt-8 border-t border-border">
-          {faqs.map((f) => (
+          {faqsDE.map((f) => (
             <details key={f.q} className="group border-b border-border py-4">
               <summary className="flex cursor-pointer list-none items-center justify-between gap-4 text-left font-medium focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring">
                 {f.q}
@@ -405,9 +420,17 @@ function Faq() {
                 </svg>
               </summary>
               <div className="mt-3 space-y-3 text-foreground/80">
-                {f.a.map((para, i) => (
-                  <p key={i}>{para}</p>
-                ))}
+                {f.a.map((item, i) =>
+                  typeof item === "string" ? (
+                    <p key={i}>{item}</p>
+                  ) : (
+                    <ul key={i} className="list-disc space-y-1 pl-5">
+                      {item.items.map((li) => (
+                        <li key={li}>{li}</li>
+                      ))}
+                    </ul>
+                  ),
+                )}
               </div>
             </details>
           ))}
@@ -421,17 +444,15 @@ function Booking() {
   return (
     <section id="booking" className="bg-celadon/25 py-16 md:py-20">
       <div className="mx-auto max-w-[720px] px-5 text-center">
-        <h2 className="text-3xl md:text-4xl">Ready to book?</h2>
+        <h2 className="text-3xl md:text-4xl">Bereit für Ihren Termin?</h2>
         <p className="mt-3 text-foreground/80">
-          Sessions offered in
+          Sitzungen werden angeboten auf
           <br />
-          <strong className="font-semibold text-foreground">
-            English, German, and Russian
-          </strong>
+          <strong className="font-semibold text-foreground">Englisch, Deutsch und Russisch</strong>
           .
         </p>
         <div className="mt-7 flex justify-center">
-          <BookButton />
+          <BookButton>Termin buchen</BookButton>
         </div>
         <div className="mt-8 flex flex-wrap justify-center gap-2.5">
           <a
@@ -465,12 +486,12 @@ function Booking() {
   );
 }
 
-function Index() {
+function DeIndex() {
   return (
     <>
       <Hero />
       <MeetAngie />
-      <Philosophy />
+      <Philosophie />
       <Expect />
       <Services />
       <Faq />

@@ -4,12 +4,14 @@ type ImpressumLang = {
   tmgHeader: string;
   contactLabel: string;
   emailLabel: string;
+  vatLabel: string;
   copyright: { title: string; paragraphs: string[] };
 };
 
 export const impressum: {
   entity: string[];
   email: string;
+  vatNumber: string;
   de: ImpressumLang;
   en: ImpressumLang;
 } = {
@@ -18,12 +20,14 @@ export const impressum: {
     "Hamsa Studio, Hildastraße 17, 79102 Freiburg im Breisgau",
   ],
   email: "hi@bloom-balance.info",
+  vatNumber: "DE465812312",
   de: {
     title: "Impressum",
     intro: [],
     tmgHeader: "Angaben gemäß § 5 TMG:",
     contactLabel: "Kontakt:",
     emailLabel: "E-Mail:",
+    vatLabel: "Umsatzsteuer-Identifikationsnummer gem. §27a UStG:",
     copyright: {
       title: "Urheberrecht",
       paragraphs: [
@@ -40,6 +44,7 @@ export const impressum: {
     tmgHeader: "Information pursuant to § 5 TMG:",
     contactLabel: "Contact:",
     emailLabel: "Email:",
+    vatLabel: "VAT Identification Number pursuant to §27a UStG:",
     copyright: {
       title: "Copyright",
       paragraphs: [
@@ -372,28 +377,7 @@ export const datenschutz: { de: DatenschutzLang; en: DatenschutzLang } = {
         ],
       },
       {
-        title: "11. Google-Bewertungen",
-        blocks: [
-          {
-            type: "p",
-            text: "Auf unserer Website können Screenshots oder Bilder von Bewertungen angezeigt werden, die ursprünglich auf Google veröffentlicht wurden.",
-          },
-          {
-            type: "p",
-            text: "Diese Bewertungen werden als statische Bilder dargestellt. Wir verwenden kein Live-Widget für Google-Bewertungen und binden keine Google-Dienste zu diesem Zweck direkt in unsere Website ein.",
-          },
-          {
-            type: "p",
-            text: "Die in einer Bewertung öffentlich sichtbaren Informationen, beispielsweise der vom Verfasser gewählte Name, ein Profilbild, der Bewertungstext oder andere öffentlich angezeigte Informationen, können dadurch auf unserer Website erscheinen.",
-          },
-          {
-            type: "p",
-            text: "Die Darstellung der Bewertungen dient dazu, Besuchern Kundenfeedback und Erfahrungen mit Bloom & Balance zu präsentieren.",
-          },
-        ],
-      },
-      {
-        title: "12. Externe Links",
+        title: "11. Externe Links",
         blocks: [
           {
             type: "p",
@@ -410,7 +394,7 @@ export const datenschutz: { de: DatenschutzLang; en: DatenschutzLang } = {
         ],
       },
       {
-        title: "13. Speicherdauer",
+        title: "12. Speicherdauer",
         blocks: [
           {
             type: "p",
@@ -428,23 +412,23 @@ export const datenschutz: { de: DatenschutzLang; en: DatenschutzLang } = {
         ],
       },
       {
-        title: "14. Ihre Rechte",
+        title: "13. Ihre Rechte",
         blocks: [
           {
             type: "p",
             text: "Wenn wir Ihre personenbezogenen Daten verarbeiten, stehen Ihnen nach Maßgabe der gesetzlichen Voraussetzungen insbesondere folgende Rechte nach der DSGVO zu:",
           },
-          { type: "h", text: "14.1 Recht auf Auskunft" },
+          { type: "h", text: "13.1 Recht auf Auskunft" },
           {
             type: "p",
             text: "Gemäß Art. 15 DSGVO haben Sie das Recht, Auskunft darüber zu verlangen, ob personenbezogene Daten über Sie verarbeitet werden und, sofern dies der Fall ist, eine Kopie dieser Daten zu erhalten.",
           },
-          { type: "h", text: "14.2 Recht auf Berichtigung" },
+          { type: "h", text: "13.2 Recht auf Berichtigung" },
           {
             type: "p",
             text: "Gemäß Art. 16 DSGVO haben Sie das Recht, die Berichtigung unrichtiger personenbezogener Daten und die Vervollständigung unvollständiger personenbezogener Daten zu verlangen.",
           },
-          { type: "h", text: "14.3 Recht auf Löschung" },
+          { type: "h", text: "13.3 Recht auf Löschung" },
           {
             type: "p",
             text: "Gemäß Art. 17 DSGVO können Sie unter den gesetzlichen Voraussetzungen die Löschung Ihrer personenbezogenen Daten verlangen.",
@@ -453,17 +437,17 @@ export const datenschutz: { de: DatenschutzLang; en: DatenschutzLang } = {
             type: "p",
             text: "Das Recht auf Löschung besteht nicht uneingeschränkt. Insbesondere können wir verpflichtet sein, bestimmte Daten aufgrund gesetzlicher Aufbewahrungspflichten aufzubewahren oder Daten zur Geltendmachung, Ausübung oder Verteidigung von Rechtsansprüchen zu benötigen.",
           },
-          { type: "h", text: "14.4 Recht auf Einschränkung der Verarbeitung" },
+          { type: "h", text: "13.4 Recht auf Einschränkung der Verarbeitung" },
           {
             type: "p",
             text: "Gemäß Art. 18 DSGVO können Sie unter den gesetzlichen Voraussetzungen die Einschränkung der Verarbeitung Ihrer personenbezogenen Daten verlangen.",
           },
-          { type: "h", text: "14.5 Recht auf Datenübertragbarkeit" },
+          { type: "h", text: "13.5 Recht auf Datenübertragbarkeit" },
           {
             type: "p",
             text: "Gemäß Art. 20 DSGVO haben Sie unter den gesetzlichen Voraussetzungen das Recht, personenbezogene Daten, die Sie uns bereitgestellt haben, in einem strukturierten, gängigen und maschinenlesbaren Format zu erhalten oder die Übermittlung an einen anderen Verantwortlichen zu verlangen.",
           },
-          { type: "h", text: "14.6 Widerspruchsrecht" },
+          { type: "h", text: "13.6 Widerspruchsrecht" },
           {
             type: "p",
             text: "Gemäß Art. 21 DSGVO haben Sie das Recht, aus Gründen, die sich aus Ihrer besonderen Situation ergeben, gegen die Verarbeitung Ihrer personenbezogenen Daten Widerspruch einzulegen, sofern die Verarbeitung auf Art. 6 Abs. 1 lit. e oder lit. f DSGVO beruht.",
@@ -472,7 +456,7 @@ export const datenschutz: { de: DatenschutzLang; en: DatenschutzLang } = {
             type: "p",
             text: "Werden personenbezogene Daten zum Zwecke der Direktwerbung verarbeitet, haben Sie das Recht, jederzeit gegen diese Verarbeitung zu widersprechen.",
           },
-          { type: "h", text: "14.7 Recht auf Widerruf einer Einwilligung" },
+          { type: "h", text: "13.7 Recht auf Widerruf einer Einwilligung" },
           {
             type: "p",
             text: "Soweit wir personenbezogene Daten auf Grundlage Ihrer Einwilligung gemäß Art. 6 Abs. 1 lit. a DSGVO verarbeiten, können Sie Ihre Einwilligung jederzeit mit Wirkung für die Zukunft widerrufen.",
@@ -481,7 +465,7 @@ export const datenschutz: { de: DatenschutzLang; en: DatenschutzLang } = {
             type: "p",
             text: "Der Widerruf der Einwilligung berührt nicht die Rechtmäßigkeit der Verarbeitung, die bis zum Zeitpunkt des Widerrufs erfolgt ist.",
           },
-          { type: "h", text: "14.8 Recht auf Beschwerde bei einer Aufsichtsbehörde" },
+          { type: "h", text: "13.8 Recht auf Beschwerde bei einer Aufsichtsbehörde" },
           {
             type: "p",
             text: "Sie haben das Recht, sich bei einer Datenschutzaufsichtsbehörde zu beschweren, wenn Sie der Ansicht sind, dass die Verarbeitung Ihrer personenbezogenen Daten gegen geltendes Datenschutzrecht verstößt.",
@@ -502,7 +486,7 @@ export const datenschutz: { de: DatenschutzLang; en: DatenschutzLang } = {
         ],
       },
       {
-        title: "15. Datensicherheit",
+        title: "14. Datensicherheit",
         blocks: [
           {
             type: "p",
@@ -515,7 +499,7 @@ export const datenschutz: { de: DatenschutzLang; en: DatenschutzLang } = {
         ],
       },
       {
-        title: "16. Änderungen dieser Datenschutzerklärung",
+        title: "15. Änderungen dieser Datenschutzerklärung",
         blocks: [
           {
             type: "p",
@@ -830,28 +814,7 @@ export const datenschutz: { de: DatenschutzLang; en: DatenschutzLang } = {
         ],
       },
       {
-        title: "11. Google Reviews",
-        blocks: [
-          {
-            type: "p",
-            text: "Our website may display screenshots or images of reviews originally published on Google.",
-          },
-          {
-            type: "p",
-            text: "These reviews are displayed as static images. We do not use a live Google Reviews widget or embed Google services for this purpose.",
-          },
-          {
-            type: "p",
-            text: "The information visible in a review, including a reviewer's chosen name, profile image, review text, or other publicly displayed information, may therefore appear on our website.",
-          },
-          {
-            type: "p",
-            text: "The reviews are displayed for the purpose of presenting customer feedback and informing visitors about experiences with Bloom & Balance.",
-          },
-        ],
-      },
-      {
-        title: "12. External Links",
+        title: "11. External Links",
         blocks: [
           {
             type: "p",
@@ -868,7 +831,7 @@ export const datenschutz: { de: DatenschutzLang; en: DatenschutzLang } = {
         ],
       },
       {
-        title: "13. Data Retention",
+        title: "12. Data Retention",
         blocks: [
           {
             type: "p",
@@ -886,23 +849,23 @@ export const datenschutz: { de: DatenschutzLang; en: DatenschutzLang } = {
         ],
       },
       {
-        title: "14. Your Rights",
+        title: "13. Your Rights",
         blocks: [
           {
             type: "p",
             text: "If we process your personal data, you have the following rights under the GDPR, subject to the applicable legal requirements.",
           },
-          { type: "h", text: "14.1 Right of Access" },
+          { type: "h", text: "13.1 Right of Access" },
           {
             type: "p",
             text: "Under Art. 15 GDPR, you have the right to request information about whether we process personal data concerning you and, where applicable, to obtain a copy of that data.",
           },
-          { type: "h", text: "14.2 Right to Rectification" },
+          { type: "h", text: "13.2 Right to Rectification" },
           {
             type: "p",
             text: "Under Art. 16 GDPR, you have the right to request correction of inaccurate personal data and completion of incomplete personal data.",
           },
-          { type: "h", text: "14.3 Right to Erasure" },
+          { type: "h", text: "13.3 Right to Erasure" },
           {
             type: "p",
             text: "Under Art. 17 GDPR, you may request deletion of your personal data where the legal requirements for erasure are met.",
@@ -911,17 +874,17 @@ export const datenschutz: { de: DatenschutzLang; en: DatenschutzLang } = {
             type: "p",
             text: "The right to erasure is not absolute. For example, we may be required to retain certain information to comply with legal obligations or to establish, exercise, or defend legal claims.",
           },
-          { type: "h", text: "14.4 Right to Restriction of Processing" },
+          { type: "h", text: "13.4 Right to Restriction of Processing" },
           {
             type: "p",
             text: "Under Art. 18 GDPR, you may request restriction of the processing of your personal data where the legal requirements are met.",
           },
-          { type: "h", text: "14.5 Right to Data Portability" },
+          { type: "h", text: "13.5 Right to Data Portability" },
           {
             type: "p",
             text: "Under Art. 20 GDPR, you may have the right to receive personal data that you have provided to us in a structured, commonly used, and machine-readable format or to request its transmission to another controller, where the legal requirements are met.",
           },
-          { type: "h", text: "14.6 Right to Object" },
+          { type: "h", text: "13.6 Right to Object" },
           {
             type: "p",
             text: "Under Art. 21 GDPR, you have the right to object to processing based on Art. 6(1)(e) or Art. 6(1)(f) GDPR where there are grounds relating to your particular situation.",
@@ -930,7 +893,7 @@ export const datenschutz: { de: DatenschutzLang; en: DatenschutzLang } = {
             type: "p",
             text: "Where personal data is processed for direct marketing, you have the right to object at any time.",
           },
-          { type: "h", text: "14.7 Right to Withdraw Consent" },
+          { type: "h", text: "13.7 Right to Withdraw Consent" },
           {
             type: "p",
             text: "Where we process personal data on the basis of your consent under Art. 6(1)(a) GDPR, you may withdraw your consent at any time.",
@@ -939,7 +902,7 @@ export const datenschutz: { de: DatenschutzLang; en: DatenschutzLang } = {
             type: "p",
             text: "Withdrawal of consent does not affect the lawfulness of processing carried out before the withdrawal.",
           },
-          { type: "h", text: "14.8 Right to Lodge a Complaint" },
+          { type: "h", text: "13.8 Right to Lodge a Complaint" },
           {
             type: "p",
             text: "You have the right to lodge a complaint with a data protection supervisory authority if you believe that the processing of your personal data violates applicable data protection law.",
@@ -964,7 +927,7 @@ export const datenschutz: { de: DatenschutzLang; en: DatenschutzLang } = {
         ],
       },
       {
-        title: "15. Data Security",
+        title: "14. Data Security",
         blocks: [
           {
             type: "p",
@@ -977,7 +940,7 @@ export const datenschutz: { de: DatenschutzLang; en: DatenschutzLang } = {
         ],
       },
       {
-        title: "16. Changes to This Privacy Policy",
+        title: "15. Changes to This Privacy Policy",
         blocks: [
           {
             type: "p",
