@@ -230,7 +230,7 @@ function Expect() {
                     >
                       <div className="min-w-0">
                         <span className="accent-text text-sm sm:text-lg">
-                          {String(i + 1).padStart(2, "0")}
+                          {i + 1}
                         </span>
                         <h3 className="mt-0.5 text-base sm:mt-1 sm:text-xl">{s.title}</h3>
                       </div>
