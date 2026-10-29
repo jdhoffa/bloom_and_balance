@@ -303,11 +303,11 @@ function Services() {
       <div className="mx-auto max-w-[900px] px-5">
         <div>
           <h2 className="text-3xl md:text-4xl">Behandlungen</h2>
-          <p className="mt-4 text-sm text-foreground/75">
+          <p className="mt-4 text-foreground/75">
             Ihr erster Besuch umfasst ein Beratungsgespräch zu Ihrem Wohlbefinden, gefolgt von
             einer individuell auf Sie abgestimmten Ganzkörperbehandlung.
           </p>
-          <p className="mt-3 text-sm text-foreground/75">
+          <p className="mt-3 text-foreground/75">
             Bei Folgeterminen können wir uns gezielt auf bestimmte Körperbereiche konzentrieren,
             weshalb ein geringerer Zeitaufwand ausreicht.
           </p>
