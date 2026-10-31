@@ -197,7 +197,7 @@ function Expect() {
     <section id="expect" className="section-pad bg-cream">
       <div className="mx-auto max-w-[1000px] px-5">
         <div className="flex flex-col gap-6 sm:flex-row sm:items-end sm:justify-between">
-          <h2 className="max-w-xl text-3xl md:text-4xl">Was du von deiner Sitzung erwarten kannst</h2>
+          <h2 className="max-w-xl text-3xl md:text-4xl">Was Du von Deiner Sitzung erwarten kannst</h2>
           <div
             role="tablist"
             aria-label="Sitzungsart"
@@ -302,8 +302,8 @@ function Services() {
         <div>
           <h2 className="text-3xl md:text-4xl">Behandlungen</h2>
           <p className="mt-4 text-foreground/75">
-            Dein erster Besuch umfasst ein Beratungsgespräch zu deinem Wohlbefinden, gefolgt von
-            einer individuell auf dich abgestimmten Ganzkörperbehandlung.
+            Dein erster Besuch umfasst ein Beratungsgespräch zu Deinem Wohlbefinden, gefolgt von
+            einer individuell auf Dich abgestimmten Ganzkörperbehandlung.
           </p>
           <p className="mt-3 text-foreground/75">
             Bei den Folgeterminen können wir uns gezielt auf bestimmte Körperbereiche konzentrieren,
@@ -322,7 +322,7 @@ function Services() {
             </span>
           </div>
           <p className="mt-2.5 text-xs text-foreground/75">
-            Verwenden Sie den Code{" "}
+            Verwende den Code{" "}
             <span className="font-semibold tracking-wide text-foreground">FIRSTBLOOM</span>{" "}
             beim Online-Bezahlvorgang.
           </p>
@@ -442,7 +442,7 @@ function Booking() {
   return (
     <section id="booking" className="bg-celadon/25 py-16 md:py-20">
       <div className="mx-auto max-w-[720px] px-5 text-center">
-        <h2 className="text-3xl md:text-4xl">Bereit für deinen Termin?</h2>
+        <h2 className="text-3xl md:text-4xl">Bereit für Deinen Termin?</h2>
         <p className="mt-3 text-foreground/80">
           Sitzungen werden angeboten auf
           <br />
