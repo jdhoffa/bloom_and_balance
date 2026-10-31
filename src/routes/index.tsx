@@ -106,11 +106,9 @@ function MeetAngie() {
         <div>
           <h2 className="text-3xl md:text-4xl">Hallo, ich bin Angie.</h2>
           <p className="mt-5 text-foreground/80">
-            Ich wurde in Moskau geboren, zog schon in jungen Jahren nach England und studierte
-            anschließend am British College of Osteopathic Medicine in London, wo ich 2019 meinen
-            Master of Osteopathy mit Auszeichnung abschloss. Im darauffolgenden Jahr absolvierte
-            ich zudem einen Spezialisierungskurs in Pädiatrie am Osteopathic Centre for Children
-            in London.
+            Ich schloss 2019 mein Masterstudium der Osteopathie am British College of Osteopathic
+            Medicine in London mit Auszeichnung. Im darauffolgenden Jahr absolvierte ich zudem
+            einen Spezialisierungskurs in Pädiatrie am Osteopathic Centre for Children in London.
           </p>
           <div
             id="about-angie-more-de"
@@ -126,7 +124,7 @@ function MeetAngie() {
             <p className="mt-4 text-foreground/80">
               Nach sechs Jahren fühlte ich mich bereit, meinen eigenen Raum zu schaffen – einen
               Ort, an dem ich mein Wissen, meine Erfahrung und meine Leidenschaft für ganzheitliches
-              Wohlbefinden und natürliche Schönheit vereinen konnte. So entstand die Idee für
+              Wohlbefinden und natürliche Schönheit vereinen kann. So entstand die Idee für
               Bloom &amp; Balance.
             </p>
           </div>
@@ -199,7 +197,7 @@ function Expect() {
     <section id="expect" className="section-pad bg-cream">
       <div className="mx-auto max-w-[1000px] px-5">
         <div className="flex flex-col gap-6 sm:flex-row sm:items-end sm:justify-between">
-          <h2 className="max-w-xl text-3xl md:text-4xl">Was Sie von Ihrer Sitzung erwarten können</h2>
+          <h2 className="max-w-xl text-3xl md:text-4xl">Was du von deiner Sitzung erwarten kannst</h2>
           <div
             role="tablist"
             aria-label="Sitzungsart"
@@ -304,12 +302,12 @@ function Services() {
         <div>
           <h2 className="text-3xl md:text-4xl">Behandlungen</h2>
           <p className="mt-4 text-foreground/75">
-            Ihr erster Besuch umfasst ein Beratungsgespräch zu Ihrem Wohlbefinden, gefolgt von
-            einer individuell auf Sie abgestimmten Ganzkörperbehandlung.
+            Dein erster Besuch umfasst ein Beratungsgespräch zu deinem Wohlbefinden, gefolgt von
+            einer individuell auf dich abgestimmten Ganzkörperbehandlung.
           </p>
           <p className="mt-3 text-foreground/75">
-            Bei Folgeterminen können wir uns gezielt auf bestimmte Körperbereiche konzentrieren,
-            weshalb ein geringerer Zeitaufwand ausreicht.
+            Bei den Folgeterminen können wir uns gezielt auf bestimmte Körperbereiche konzentrieren,
+            weshalb eine kürzere Sitzung ausreicht.
           </p>
         </div>
 
@@ -444,7 +442,7 @@ function Booking() {
   return (
     <section id="booking" className="bg-celadon/25 py-16 md:py-20">
       <div className="mx-auto max-w-[720px] px-5 text-center">
-        <h2 className="text-3xl md:text-4xl">Bereit für Ihren Termin?</h2>
+        <h2 className="text-3xl md:text-4xl">Bereit für deinen Termin?</h2>
         <p className="mt-3 text-foreground/80">
           Sitzungen werden angeboten auf
           <br />
