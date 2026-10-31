@@ -93,10 +93,10 @@ function MeetAngie() {
         <div>
           <h2 className="text-3xl md:text-4xl">Meet Angie</h2>
           <p className="mt-5 text-foreground/80">
-            Born in Moscow, I moved to England at a young age and went on to study at the British
-            College of Osteopathic Medicine in London where in 2019 I was awarded a Master of
-            Osteopathy degree with commendation. The following year I also completed a
-            specialisation course in paediatrics at the Osteopathic Centre for Children in London.
+            I graduated from the British College of Osteopathic Medicine in London in 2019, where
+            I was awarded a Master of Osteopathy degree with commendation. The following year I
+            also completed a specialisation course in paediatrics at the Osteopathic Centre for
+            Children in London.
           </p>
           <div
             id="about-angie-more"

@@ -99,7 +99,7 @@ type FaqAnswer = string | { type: "list"; items: string[] };
 
 export const faqs: { q: string; a: FaqAnswer[] }[] = [
   {
-    q: "Is parking available?",
+    q: "Is free parking available?",
     a: [
       "There is no free parking available on the premises. Please plan your journey in advance and allow extra time to find suitable parking nearby.",
     ],
@@ -158,7 +158,7 @@ export const faqs: { q: string; a: FaqAnswer[] }[] = [
   {
     q: "When should I avoid a buccal massage?",
     a: [
-      "Buccal massage is contraindicated in the following cases:",
+      "Buccal massage is not recommended in the following cases:",
       {
         type: "list",
         items: [
@@ -176,7 +176,7 @@ export const faqs: { q: string; a: FaqAnswer[] }[] = [
 export const navLinksDE = [
   { label: "Über mich", href: "/#meet-angie" },
   { label: "Philosophie", href: "/#philosophy" },
-  { label: "Ihre Sitzung", href: "/#expect" },
+  { label: "Deine Sitzung", href: "/#expect" },
   { label: "Behandlungen", href: "/#services" },
   { label: "FAQ", href: "/#faq" },
   { label: "Kontakt", href: "/#booking" },
@@ -185,34 +185,34 @@ export const navLinksDE = [
 export const stepsDE = [
   {
     title: "Ankunft und Wellness-Beratung",
-    body: "Wir werden Ihren Fragebogen zum Wohlbefinden und Ihre persönlichen Vorlieben besprechen, damit ich die Sitzung genau auf Ihre Ziele und Wünsche abstimmen kann.",
+    body: "Wir werden deinen Fragebogen zum Wohlbefinden und deine persönlichen Vorlieben besprechen, damit ich die Sitzung genau auf deine Ziele und Wünsche abstimmen kann.",
   },
   {
     title: "Body Check",
-    body: "Ich werde Ihre Körperhaltung und Ihre Bewegungsmuster beobachten.",
+    body: "Ich werde deine Körperhaltung und deine Bewegungsmuster beobachten.",
   },
   {
     title: "Body Work",
-    body: "Der Behandlungsteil der Sitzung umfasst eine Auswahl sanfter Techniken, die darauf abzielen, ein regenerierendes Erlebnis zu schaffen und eine achtsame Verbindung zu Ihrem Körper zu fördern.",
+    body: "Der Behandlungsteil der Sitzung umfasst eine Auswahl sanfter Techniken, die darauf abzielen, ein regenerierendes Erlebnis zu schaffen und eine achtsame Verbindung zu deinem Körper zu fördern.",
   },
   {
     title: "Kopf und Nacken",
-    body: "Dieser Teil Ihrer Sitzung kann Kopfhaut-, Kobido- und Bukkalmassagetechniken umfassen, um ein strahlendes Aussehen zu fördern.",
+    body: "Dieser Teil deiner Sitzung kann Kopfhaut-, Kobido- und Bukkalmassagetechniken umfassen, um ein strahlendes Aussehen zu fördern.",
   },
 ];
 
 export const aftercareDisclaimerDE =
-  "Bitte beachten Sie, dass ich weder Ärztin noch Kosmetikerin bin. Meine Dienstleistungen werden im Rahmen der Wellness angeboten und dienen nicht der Hautanalyse, der medizinischen Beratung, der Diagnose oder der Behandlung bereits bestehender Erkrankungen und schmerzbezogener Symptome.";
+  "Bitte beachte, dass ich weder Ärztin noch Kosmetikerin bin. Meine Dienstleistungen werden im Rahmen der Wellness angeboten und dienen nicht der Hautanalyse, der medizinischen Beratung, der Diagnose oder der Behandlung bereits bestehender Erkrankungen und schmerzbezogener Symptome.";
 
 export const babySessionDE = {
   tagline: "Eine sanfte Körperbehandlung, die Ruhe, Wohlbefinden und Verbundenheit fördert.",
   paragraphs: [
     "Durch meine Ausbildung in pädiatrischer Osteopathie habe ich ein tiefes Verständnis für die sanfte und einfühlsame Art der Arbeit mit Babys entwickelt. Dieses Wissen und diese Erfahrung bringe ich in meine Babymassagen ein.",
-    "Ich arbeite ohne Öle, sondern wende Weichteiltechniken und sehr sanfte Mobilisationstechniken am ganzen Körper an. Dabei orientiere ich mich stets an den Signalen Ihres Babys und lasse viel Zeit für Pausen, zum Beruhigen, Stillen oder Kuscheln, wann immer dies nötig ist.",
+    "Ich arbeite ohne Öle, sondern wende Weichteiltechniken und sehr sanfte Mobilisationstechniken am ganzen Körper an. Dabei orientiere ich mich stets an den Signalen deines Babys und lasse viel Zeit für Pausen, zum Beruhigen, Stillen oder Kuscheln, wann immer dies nötig ist.",
     "Babys können bereits in den ersten Wochen nach der Geburt zu mir kommen, vorausgesetzt, es geht ihnen gut und sie haben keine gesundheitlichen Vorerkrankungen.",
   ],
   disclaimer:
-    "Hierbei handelt es sich um eine Wellness- und Entspannungsbehandlung, die keine medizinische oder osteopathische Behandlung ersetzt. Sollte Ihr Baby gesundheitliche Probleme haben, konsultieren Sie bitte vor der Buchung einen geeigneten Arzt oder Therapeuten.",
+    "Hierbei handelt es sich um eine Wellness- und Entspannungsbehandlung, die keine medizinische oder osteopathische Behandlung ersetzt. Sollte dein Baby gesundheitliche Probleme haben, konsultiere bitte vor der Buchung einen geeigneten Arzt oder Therapeuten.",
 };
 
 export const servicesDE = services.map((s, i) => ({
@@ -229,7 +229,7 @@ export const servicesDE = services.map((s, i) => ({
 
 export const faqsDE: { q: string; a: FaqAnswer[] }[] = [
   {
-    q: "Gibt es Parkmöglichkeiten?",
+    q: "Gibt es kostenlose Parkmöglichkeiten?",
     a: [
       "Auf dem Gelände stehen keine kostenlosen Parkplätze zur Verfügung. Bitte planen Sie Ihre Anreise im Voraus und rechnen Sie etwas mehr Zeit ein, um in der Nähe einen geeigneten Parkplatz zu finden.",
     ],
@@ -237,16 +237,16 @@ export const faqsDE: { q: string; a: FaqAnswer[] }[] = [
   {
     q: "Bezahlung",
     a: [
-      "Die Behandlungskosten können bei der Online-Buchung per Karte im Voraus bezahlt werden.",
-      "Alternativ können Sie nach Ihrer Sitzung bar oder per PayPal bezahlen.",
+      "Die Behandlungskosten können bei der Online-Buchung mit Karte im Voraus bezahlt werden.",
+      "Alternativ kannst du nach deiner Sitzung bar oder per PayPal bezahlen.",
       "Kartenzahlungen sind vor Ort nicht möglich.",
-      "Bitte beachten Sie, dass alle Sitzungen zu Wellness-, Entspannungs- und ästhetischen Zwecken angeboten werden und nicht von Krankenkassen oder privaten Versicherungen erstattet werden.",
+      "Bitte beachte, dass alle Sitzungen zu Wellness-, Entspannungs- und ästhetischen Zwecken angeboten werden und nicht von Krankenkassen oder privaten Versicherungen erstattet werden.",
     ],
   },
   {
     q: "Terminverschiebung und Stornierung",
     a: [
-      "Sie können Ihren Termin bis zu 24 Stunden im Voraus kostenlos verschieben oder stornieren.",
+      "Du kannst deinen Termin bis zu 24 Stunden im Voraus kostenlos verschieben oder stornieren.",
     ],
   },
   {
@@ -256,20 +256,20 @@ export const faqsDE: { q: string; a: FaqAnswer[] }[] = [
   {
     q: "Schwangerschaft",
     a: [
-      "Wenn Sie schwanger sind, sprechen Sie bitte vor der Buchung eines Termins mit Ihrem Arzt oder Ihrer Ärztin. Viele Frauen genießen sanfte Wellness-Behandlungen während der Schwangerschaft, doch jede Schwangerschaft ist einzigartig, und Ihre individuellen Umstände sollten stets berücksichtigt werden.",
-      "Bitte teilen Sie mir mit, wenn Sie schwanger sind oder vor kurzem entbunden haben, damit der Termin entsprechend angepasst werden kann und Ihr Wohlbefinden stets im Vordergrund steht.",
+      "Wenn du schwanger bist, sprich bitte vor der Buchung eines Termins mit deinem Arzt oder deiner Ärztin. Viele Frauen genießen sanfte Wellness-Behandlungen während der Schwangerschaft, doch jede Schwangerschaft ist einzigartig, und deine individuellen Umstände sollten stets berücksichtigt werden.",
+      "Bitte teile mir mit, wenn du schwanger bist oder vor kurzem entbunden hast, damit der Termin entsprechend angepasst werden kann und dein Wohlbefinden stets im Vordergrund steht.",
     ],
   },
   {
     q: "Wie sollte ich mich auf meine Gesichts- oder Bukkalmassage vorbereiten?",
     a: [
-      "Bitte kommen Sie mit einem sauberen, schminkfreien Gesicht, um das bestmögliche Erlebnis während Ihrer Gesichts- oder Bukkalmassage zu gewährleisten.",
+      "Bitte komm mit einem sauberen, umgeschminkten Gesicht, um das bestmögliche Erlebnis während deiner Gesichts- oder Bukkalmassage zu gewährleisten.",
     ],
   },
   {
     q: "Wann sollte ich auf eine Kobido-Gesichtsbehandlung verzichten?",
     a: [
-      "Zu Ihrer Sicherheit ist eine Kobido-Gesichtsmassage in bestimmten Situationen möglicherweise nicht geeignet. Bitte informieren Sie mich vor Ihrem Termin, wenn einer der folgenden Punkte auf Sie zutrifft:",
+      "Zu deiner Sicherheit ist eine Kobido-Gesichtsmassage in bestimmten Situationen möglicherweise nicht geeignet. Bitte informiere mich vor deinem Termin, wenn einer der folgenden Punkte auf dich zutrifft:",
       {
         type: "list",
         items: [
@@ -279,7 +279,7 @@ export const faqsDE: { q: string; a: FaqAnswer[] }[] = [
           "Fieber oder eine akute ansteckende Erkrankung",
           "Aktive entzündliche Akne",
           "Kürzlich durchgeführte Gesichtsbehandlungen, zahnmedizinische Eingriffe oder Operationen",
-          "Kürzlich durchgeführte ästhetische Behandlungen, einschließlich Botox, Dermal Filler, Fadenlifting oder Laserbehandlungen (bitte halten Sie die empfohlene Erholungszeit ein und befolgen Sie die Empfehlungen Ihrer behandelnden Fachperson)",
+          "Kürzlich durchgeführte ästhetische Behandlungen, einschließlich Botox, Dermal Filler, Fadenlifting oder Laserbehandlungen (bitte halte die empfohlene Erholungszeit ein und befolge die Empfehlungen deiner behandelnden Fachperson)",
           "Krebserkrankungen oder laufende Krebsbehandlungen, sofern keine ärztliche Freigabe vorliegt",
         ],
       },
@@ -288,7 +288,7 @@ export const faqsDE: { q: string; a: FaqAnswer[] }[] = [
   {
     q: "Wann sollte ich auf eine Bukkalmassage verzichten?",
     a: [
-      "Eine Buccal-Massage ist in folgenden Fällen kontraindiziert:",
+      "Eine Bukkal-Massage ist in folgenden Fällen nicht empfohlen:",
       {
         type: "list",
         items: [
@@ -298,7 +298,7 @@ export const faqsDE: { q: string; a: FaqAnswer[] }[] = [
           "Kürzlich durchgeführte Zahnbehandlungen oder oralchirurgische Eingriffe",
         ],
       },
-      "Bitte informieren Sie mich vor Ihrem Termin über relevante Beschwerden und befolgen Sie nach Zahnbehandlungen oder oralchirurgischen Eingriffen die Empfehlungen Ihres behandelnden Arztes.",
+      "Bitte informiere mich vor deinem Termin über relevante Beschwerden und befolge nach Zahnbehandlungen oder oralchirurgischen Eingriffen die Empfehlungen deines behandelnden Arztes.",
     ],
   },
 ];
