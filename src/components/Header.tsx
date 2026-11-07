@@ -82,12 +82,12 @@ export function Header() {
           <div
             role="group"
             aria-label="Language / Sprache"
-            className="hidden rounded-full border border-border bg-background/70 p-1 shadow-sm lg:inline-flex"
+            className="inline-flex rounded-full border border-border bg-background/70 p-0.5 shadow-sm sm:p-1"
           >
             <a
               href="/"
               aria-label="Auf Deutsch wechseln"
-              className={`rounded-full px-4 py-1.5 text-sm font-medium transition ${
+              className={`rounded-full px-3 py-1 text-xs font-medium transition sm:px-4 sm:py-1.5 sm:text-sm ${
                 isGerman
                   ? "bg-peach/30 text-foreground shadow-inner"
                   : "text-foreground/60 hover:text-foreground"
@@ -98,7 +98,7 @@ export function Header() {
             <a
               href="/en"
               aria-label="Switch to English"
-              className={`rounded-full px-4 py-1.5 text-sm font-medium transition ${
+              className={`rounded-full px-3 py-1 text-xs font-medium transition sm:px-4 sm:py-1.5 sm:text-sm ${
                 !isGerman
                   ? "bg-peach/30 text-foreground shadow-inner"
                   : "text-foreground/60 hover:text-foreground"
@@ -137,22 +137,6 @@ export function Header() {
                 </a>
               </li>
             ))}
-            <li className="flex gap-6 border-b border-border/60 py-3">
-              <a
-                href="/"
-                onClick={() => setOpen(false)}
-                className={`text-base font-medium ${isGerman ? "text-foreground" : "text-foreground/40"}`}
-              >
-                DE
-              </a>
-              <a
-                href="/en"
-                onClick={() => setOpen(false)}
-                className={`text-base font-medium ${!isGerman ? "text-foreground" : "text-foreground/40"}`}
-              >
-                EN
-              </a>
-            </li>
           </ul>
         </nav>
       )}
